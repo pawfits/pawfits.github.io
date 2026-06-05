@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포핏플레이 가이드 — 포핏 AI 플레이그라운드</title>
+<meta name="description" content="포핏(Pawfit) 포핏플레이 사용 가이드. 예상노트 AI 차트 검증, Dr.포핏 월간 진단.">>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#3A2E22;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --pink:#F1789C;
+  --teal:#2FA98B;
+  --teal-deep:#0F6E56;
+  --coral:#D85A30;
+  --coral-deep:#993C1D;
+  --card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Gowun Dodum',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:'Jua',sans-serif;
+}
+header{
+  text-align:center;
+  padding:28px 0 40px;
+}
+.paw{
+  font-family:'Jua',sans-serif;
+  font-size:15px;
+  letter-spacing:.2em;
+  color:var(--orange-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:'Jua',sans-serif;
+  font-size:clamp(30px,8vw,40px);
+  line-height:1.3;
+  margin:10px 0 14px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+.toc{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:22px;
+  padding:20px 24px;
+  margin-bottom:56px;
+}
+.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc a{
+  display:block;
+  color:var(--ink);
+  text-decoration:none;
+  padding:6px 0;
+  font-size:16px;
+  border-bottom:1px dashed var(--cream-deep);
+}
+.toc a:last-child{border-bottom:none}
+.toc a:hover{color:var(--orange-deep)}
+section{margin-bottom:72px}
+.sec-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.blob-num{
+  font-family:'Jua',sans-serif;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  color:#fff;
+  background:var(--orange);
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  flex-shrink:0;
+}
+.blob-num.pink{background:var(--pink)}
+.blob-num.teal{background:var(--teal)}
+h2{
+  font-family:'Jua',sans-serif;
+  font-size:24px;
+  line-height:1.35;
+}
+h3{
+  font-family:'Jua',sans-serif;
+  font-size:18px;
+  margin:34px 0 10px;
+  color:var(--orange-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:18px;
+  background:var(--card);
+  border-left:5px solid var(--orange);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 24px;
+}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:280px;margin:0 auto}
+figure.mid img{max-width:380px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.duo{display:flex;gap:14px;align-items:flex-start}
+.duo figure{flex:1;margin:0}
+.duo-wrap{margin:22px 0}
+.duo-wrap figcaption{margin-top:12px}
+.svgbox{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:20px;
+  padding:18px 10px;
+  margin:24px 0;
+}
+.svgbox svg{width:100%;height:auto;display:block}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps{list-style:none;margin:18px 0;counter-reset:step}
+.steps li{
+  position:relative;
+  padding:0 0 18px 52px;
+  counter-increment:step;
+}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:'Jua',sans-serif;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:17px;
+}
+.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  .duo{flex-direction:column}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="guide.html">← 포핏 전체 가이드</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>포핏플레이<br>AI 플레이그라운드</h1>
+  <p class="sub">그림 그리고, 진단받고 — 포핏과 노는 곳 🐾</p>
+</header>
+
+<nav class="toc">
+  <p>차례</p>
+  <a href="#note">1. 예상노트 — 그리면 포핏이 봐줘요</a>
+  <a href="#doctor">2. Dr.포핏 — 월간 AI 진단</a>
+</nav>
+
+<figure class="mid">
+  <img src="images/play_menu.png" alt="포핏플레이 메뉴. 예상노트와 Dr.포핏 두 가지가 있다" loading="lazy">
+  <figcaption>포핏플레이에는 지금 두 가지 놀이가 있어요</figcaption>
+</figure>
+
+<!-- ===== 1. 예상노트 ===== -->
+<section id="note">
+  <div class="sec-tag">
+    <span class="blob-num">1</span>
+    <h2>예상노트 — 그리면 포핏이 봐줘요</h2>
+  </div>
+
+  <p class="lead">내가 생각하는 <b>앞으로의 방향</b>을 차트 밑에 직접 그리면, AI가 그 시나리오를 보고 한마디 해주는 기능이에요.</p>
+
+  <ol class="steps">
+    <li><strong>차트 띄우기</strong> — 위 검색창에 종목명을 입력하면 차트가 나와요. 옆의 파란 버튼으로 <b>차트 스크린샷 이미지</b>를 불러올 수도 있어요.</li>
+    <li><strong>그리기</strong> — 아래 칸에 예상하는 추세선이나 캔들을 자유롭게 그려요.</li>
+    <li><strong>GO! 포핏 검증</strong> — 버튼을 누르면 포핏이 내 시나리오를 판단해 줍니다.</li>
+  </ol>
+
+  <figure>
+    <img src="images/play_note_top.png" alt="예상노트 상단. 종목 검색창과 이미지 불러오기 버튼, 종목 차트" loading="lazy">
+  </figure>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure>
+        <img src="images/play_note_draw.png" alt="아래 캔버스에 추세선을 그린 모습. 분석 중 버튼이 활성화되어 있다" loading="lazy">
+      </figure>
+      <figure>
+        <img src="images/play_note_guide.png" alt="그리기 안내. 자유롭게 캔들이나 추세를 그리고 GO 포핏 버튼을 누르라는 설명과 GO 포핏 검증 버튼" loading="lazy">
+      </figure>
+    </div>
+    <figcaption>밑 칸에 쓱쓱 그리고 → GO! 포핏 검증</figcaption>
+  </div>
+
+  <figure class="mid">
+    <img src="images/play_note_result.png" alt="포핏 진단 팝업. 그린 시나리오에 대해 포핏이 분석 멘트를 해준다" loading="lazy">
+    <figcaption>내가 그린 시나리오에 대한 포핏의 한마디</figcaption>
+  </figure>
+  <div class="note"><strong>참고용이에요.</strong> AI 분석에는 오류나 부정확한 내용이 있을 수 있어요. 투자 판단은 꼭 직접 확인하고 하세요.</div>
+</section>
+
+<!-- ===== 2. Dr.포핏 ===== -->
+<section id="doctor">
+  <div class="sec-tag">
+    <span class="blob-num pink">2</span>
+    <h2>Dr.포핏 — 월간 AI 진단</h2>
+  </div>
+
+  <p class="lead">한 달 치 기록이 쌓이면 받는 <b>월간 정밀 진단</b>이에요. 가계부·매매일지 대시보드의 게이지가 그 진행률이에요.</p>
+
+  <figure>
+    <img src="images/play_doctor.png" alt="Dr.포핏 화면. 소비 진단 다시보기 카드와 투자 진단 진행률 게이지" loading="lazy">
+    <figcaption>이번 달 게이지가 차오르는 중 — 다 차면 진단 가능</figcaption>
+  </figure>
+  <p><b>소비 진단</b>(가계부)과 <b>투자 진단</b>(매매일지)이 따로 있고, 월간 게이지가 다 차면 <b>한 달에 한 번</b> 진단을 받을 수 있어요. 지난달 진단은 언제든 다시 볼 수 있습니다.</p>
+
+  <figure class="mid">
+    <img src="images/play_doctor_result.png" alt="소비 월간 진단 멘트. 한 달 소비 총평과 다음 달 미션을 제안해준다" loading="lazy">
+    <figcaption>한 달 총평 + 다음 달 미션까지 챙겨줘요</figcaption>
+  </figure>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="guide.html" style="margin-top:6px">← 포핏 전체 가이드로</a>
+</footer>
+
+</div>
+</body>
+</html>
