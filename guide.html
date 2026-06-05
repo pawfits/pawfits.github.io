@@ -112,6 +112,7 @@ p{margin-bottom:14px}
   margin:18px 0 24px;
 }
 figure{margin:26px 0}
+figure.slim img{max-width:260px;margin:0 auto}
 figure img{
   width:100%;
   height:auto;
@@ -192,9 +193,9 @@ footer .paw{display:block;margin-bottom:6px}
 <nav class="toc">
   <p>차례</p>
   <a href="#how">1. 포핏은 알림으로 기록해요</a>
-  <a href="#trade">2. 매매 알림은 "자세한 형식"으로</a>
-  <a href="#home">3. 홈화면 둘러보기</a>
-  <a href="#call">4. 포핏 호출 — 말하듯 기록·검색</a>
+  <a href="#home">2. 홈화면 둘러보기</a>
+  <a href="#call">3. 포핏 호출 — 말하듯 기록·검색</a>
+  <a href="#trade">4. 매매 알림은 "자세한 형식"으로</a>
 </nav>
 
 <!-- ===== 1. 알림 기반 기록 ===== -->
@@ -235,61 +236,22 @@ footer .paw{display:block;margin-bottom:6px}
     </svg>
   </div>
 
-  <figure>
+  <figure class="slim">
     <img src="images/processing.png" alt="포핏 홈화면에서 알림 8건 중 4건을 처리 중인 모습. 로딩 점들이 원을 그리며 돌아간다" loading="lazy">
     <figcaption>알림이 쌓이면 포핏이 알아서 차례로 처리해요. (4 / 8건 처리중)</figcaption>
   </figure>
 
-  <div class="note"><strong>꼭!</strong> 포핏의 알림 접근 권한을 켜두고, 폰 설정에서 포핏의 <b>배터리 제한을 해제</b>해 주세요. 백그라운드가 잠들면 알림을 놓칠 수 있어요.</div>
+  <div class="note"><strong>꼭!</strong> 첫 실행 시 이동하는 <b>알림 접근 권한</b>이 없으면 앱이 감지를 할 수 없습니다.<br>폰 설정에서 <b>배터리 제한</b>을 풀어주면 혹시 모를 알림 놓침을 방지할 수 있습니다.</div>
 </section>
 
-<!-- ===== 2. 매매 알림 형식 ===== -->
-<section id="trade">
-  <div class="sec-tag">
-    <span class="blob-num coral">2</span>
-    <h2>매매 알림은 "자세한 형식"으로</h2>
-  </div>
-
-  <p>주식·코인 <b>매매 기록의 정확도는 알림에 담긴 정보량</b>이 좌우해요. 종목·수량·단가가 또렷한 알림일수록 정확하게 기록됩니다.</p>
-
-  <div class="svgbox" role="img" aria-label="자세한 체결 알림과 짧은 체결 알림의 비교">
-    <svg viewBox="0 0 380 310" xmlns="http://www.w3.org/2000/svg">
-      <g>
-        <rect x="20" y="16" width="340" height="120" rx="16" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
-        <text x="44" y="46" font-size="15" font-weight="bold" fill="#085041" font-family="'Jua',sans-serif">자세한 체결 알림 — 권장 ✓</text>
-        <text x="44" y="74" font-size="13" fill="#0F6E56" font-family="monospace">[OO증권 체결] ABCD 매수 1주</text>
-        <text x="44" y="94" font-size="13" fill="#0F6E56" font-family="monospace">단가 123.45 · 수수료 0.12</text>
-        <text x="44" y="120" font-size="12.5" fill="#085041">항목이 또렷해서 정확하게 기록돼요</text>
-      </g>
-      <g>
-        <rect x="20" y="160" width="340" height="124" rx="16" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-        <text x="44" y="190" font-size="15" font-weight="bold" fill="#712B13" font-family="'Jua',sans-serif">짧은 체결 알림 — 주의 !</text>
-        <text x="44" y="218" font-size="13" fill="#993C1D" font-family="monospace">"매수 주문이 체결되었습니다."</text>
-        <text x="44" y="240" font-size="12.5" fill="#993C1D">수량 · 단가 · 시간이 빠져 있어요</text>
-        <text x="44" y="262" font-size="12.5" fill="#712B13">부분체결 · 잦은 매매에서 누락될 수 있어요</text>
-      </g>
-    </svg>
-  </div>
-
-  <div class="note"><strong>카드 결제는 괜찮아요.</strong> 카드사 알림은 짧아도 가맹점·금액이 잘 담겨 있어 그대로 기록됩니다. 이 권장은 <b>주식·코인 매매에만</b> 해당해요.</div>
-
-  <h3>증권사 앱에서 설정하기</h3>
-  <p>증권사 앱의 <b>알리미(알림) 신청</b> 메뉴에서 체결통보 수신 방법을 <b>카카오톡</b>처럼 항목이 자세히 오는 채널로 선택해 주세요. 짧은 푸시만 오는 경우보다 기록이 훨씬 정확해져요.</p>
-
-  <figure>
-    <img src="images/alimi_setting.png" alt="증권사 앱 알리미 신청 화면. 환전, 배당, 체결통보 항목에서 카카오톡 수신이 선택되어 있다" loading="lazy">
-    <figcaption>예시: 증권사 앱 알리미 신청 화면 — 체결통보를 카카오톡 수신으로 설정</figcaption>
-  </figure>
-</section>
-
-<!-- ===== 3. 홈화면 ===== -->
+<!-- ===== 2. 홈화면 ===== -->
 <section id="home">
   <div class="sec-tag">
-    <span class="blob-num pink">3</span>
+    <span class="blob-num pink">2</span>
     <h2>홈화면 둘러보기</h2>
   </div>
 
-  <p>홈에는 네 개의 방이 있어요 — <b>내돈GPS</b>(가계부), <b>개미일기</b>(매매일지), <b>포핏플레이</b>, <b>To the moon</b>. 상단 게이지는 오늘 사용할 수 있는 AI 처리량이에요.</p>
+  <p>홈에는 네 개의 방이 있어요 — <b>내돈GPS</b>(가계부), <b>개미일기</b>(매매일지), <b>포핏플레이</b>, <b>To the moon</b>(코인일지). 상단 게이지는 오늘 사용할 수 있는 AI 처리량이에요.</p>
 
   <p><b>왼쪽 위 구슬</b>이 모드 토글 스위치예요. 한 번 누르면 <b>일지모드 ↔ 비주얼모드</b>가 전환됩니다.</p>
 
@@ -306,10 +268,10 @@ footer .paw{display:block;margin-bottom:6px}
   </div>
 </section>
 
-<!-- ===== 4. 포핏 호출 ===== -->
+<!-- ===== 3. 포핏 호출 ===== -->
 <section id="call">
   <div class="sec-tag">
-    <span class="blob-num teal">4</span>
+    <span class="blob-num teal">3</span>
     <h2>포핏 호출 — 말하듯 기록·검색</h2>
   </div>
 
@@ -328,13 +290,54 @@ footer .paw{display:block;margin-bottom:6px}
   <ol class="steps">
     <li><strong>기록할 곳을 선택</strong> — 가계부 · 주식 · 코인 중 어디에 적을지 골라요.</li>
     <li><strong>말하듯 입력</strong> — 타이핑, 음성, 복사·붙여넣기 모두 가능해요. <br>예) "삼성전자 30주 15만원에 샀어" → 선택한 일지에 바로 기록!</li>
+    <li><strong>보유 종목도 여기서</strong> — 기존에 보유한 종목이 있다면 여기서 저장해 놓으세요. 일지에서 바로 보실 수 있어요.</li>
   </ol>
 
   <h3>검색 — 물어보면 찾아줘요</h3>
-  <p>섹션에서 <b>검색</b>을 고르고 궁금한 걸 그냥 물어보세요. "이번달 커피값 얼마나 썼어?"처럼요. 한 건 찾기든, 기간별 합계든, 항목을 묶어 보는 것이든 <b>AI가 질문을 해석해서</b> 내 기록에서 원하는 방식으로 찾아 보여줍니다.</p>
+  <p>검색하고 싶은 게 있으면 <b>포핏에게 대화하듯이</b> 입력해 주시면 됩니다. 예) "이번달 커피값 얼마나 썼어?"<br>한 건 찾기든, 기간별 합계든, 항목을 묶어 보는 것이든 포핏이 알아듣고 찾아옵니다.</p>
 
   <h3>Contact Us — 개발자에게 바로</h3>
   <p>건의나 질문이 있으면 <b>Contact Us</b>에 편하게 적어 보내 주세요. 개발자에게 메시지가 바로 전달돼요. 가입도, 메일 주소도 필요 없어요.</p>
+</section>
+
+<!-- ===== 4. 매매 알림 형식 ===== -->
+<section id="trade">
+  <div class="sec-tag">
+    <span class="blob-num coral">4</span>
+    <h2>매매 알림은 "자세한 형식"으로</h2>
+  </div>
+
+  <p>주식·코인 <b>매매 기록의 정확도는 알림에 담긴 정보량</b>이 좌우해요. 종목·수량·단가가 또렷한 알림일수록 정확하게 기록됩니다.</p>
+
+  <div class="svgbox" role="img" aria-label="자세한 체결 알림과 짧은 체결 알림의 비교">
+    <svg viewBox="0 0 380 336" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <rect x="20" y="16" width="340" height="142" rx="16" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+        <text x="44" y="46" font-size="15" font-weight="bold" fill="#085041" font-family="'Jua',sans-serif">자세한 체결 알림 — 권장 ✓</text>
+        <text x="44" y="74" font-size="12.5" fill="#0F6E56" font-family="monospace">[OO증권 체결통보] ABCD 매수</text>
+        <text x="44" y="94" font-size="12.5" fill="#0F6E56" font-family="monospace">주문수량 1 · 체결수량 1 · 주문번호 1390</text>
+        <text x="44" y="114" font-size="12.5" fill="#0F6E56" font-family="monospace">체결단가 123.45 · 체결금액 123,450원</text>
+        <text x="44" y="142" font-size="12.5" fill="#085041">항목이 또렷해서 부분체결까지 정확하게 기록돼요</text>
+      </g>
+      <g>
+        <rect x="20" y="182" width="340" height="124" rx="16" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+        <text x="44" y="212" font-size="15" font-weight="bold" fill="#712B13" font-family="'Jua',sans-serif">짧은 체결 알림 — 주의 !</text>
+        <text x="44" y="240" font-size="12.5" fill="#993C1D" font-family="monospace">"매수 주문이 체결되었습니다."</text>
+        <text x="44" y="262" font-size="12.5" fill="#993C1D">수량 · 단가 · 시간 · 주문번호가 없어요</text>
+        <text x="44" y="284" font-size="12.5" fill="#712B13">부분체결 · 잦은 매매에서 누락될 수 있어요</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="note"><strong>카드 결제는 괜찮아요.</strong> 카드사 알림은 짧아도 가맹점·금액이 잘 담겨 있어 그대로 기록됩니다. 이 권장은 <b>주식·코인 매매에만</b> 해당해요.</div>
+
+  <h3>증권사 앱에서 설정하기</h3>
+  <p>증권사 앱의 <b>알리미(알림) 신청</b> 메뉴에서 체결통보 수신 방법을 <b>카카오톡</b>처럼 항목이 자세히 오는 채널로 선택해 주세요. 짧은 푸시만 오는 경우보다 기록이 훨씬 정확해져요.</p>
+
+  <figure>
+    <img src="images/alimi_setting.png" alt="증권사 앱 알리미 신청 화면. 환전, 배당, 체결통보 항목에서 카카오톡 수신이 선택되어 있다" loading="lazy">
+    <figcaption>예시: 증권사 앱 알리미 신청 화면 — 체결통보를 카카오톡 수신으로 설정</figcaption>
+  </figure>
 </section>
 
 <footer>
