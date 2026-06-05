@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To the moon 가이드 — 포핏 코인일지</title>
+<meta name="description" content="포핏(Pawfit) To the moon 코인일지 사용 가이드. 거래소 API 연결, 일지, 시각화 사용법.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#3A2E22;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --pink:#F1789C;
+  --teal:#2FA98B;
+  --teal-deep:#0F6E56;
+  --coral:#D85A30;
+  --coral-deep:#993C1D;
+  --card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Gowun Dodum',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:'Jua',sans-serif;
+}
+header{
+  text-align:center;
+  padding:28px 0 40px;
+}
+.paw{
+  font-family:'Jua',sans-serif;
+  font-size:15px;
+  letter-spacing:.2em;
+  color:var(--orange-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:'Jua',sans-serif;
+  font-size:clamp(30px,8vw,40px);
+  line-height:1.3;
+  margin:10px 0 14px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+.toc{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:22px;
+  padding:20px 24px;
+  margin-bottom:56px;
+}
+.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc a{
+  display:block;
+  color:var(--ink);
+  text-decoration:none;
+  padding:6px 0;
+  font-size:16px;
+  border-bottom:1px dashed var(--cream-deep);
+}
+.toc a:last-child{border-bottom:none}
+.toc a:hover{color:var(--orange-deep)}
+section{margin-bottom:72px}
+.sec-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.blob-num{
+  font-family:'Jua',sans-serif;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  color:#fff;
+  background:var(--orange);
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  flex-shrink:0;
+}
+.blob-num.pink{background:var(--pink)}
+.blob-num.teal{background:var(--teal)}
+h2{
+  font-family:'Jua',sans-serif;
+  font-size:24px;
+  line-height:1.35;
+}
+h3{
+  font-family:'Jua',sans-serif;
+  font-size:18px;
+  margin:34px 0 10px;
+  color:var(--orange-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:18px;
+  background:var(--card);
+  border-left:5px solid var(--orange);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 24px;
+}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:280px;margin:0 auto}
+figure.mid img{max-width:380px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.duo{display:flex;gap:14px;align-items:flex-start}
+.duo figure{flex:1;margin:0}
+.duo-wrap{margin:22px 0}
+.duo-wrap figcaption{margin-top:12px}
+.svgbox{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:20px;
+  padding:18px 10px;
+  margin:24px 0;
+}
+.svgbox svg{width:100%;height:auto;display:block}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps{list-style:none;margin:18px 0;counter-reset:step}
+.steps li{
+  position:relative;
+  padding:0 0 18px 52px;
+  counter-increment:step;
+}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:'Jua',sans-serif;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:17px;
+}
+.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  .duo{flex-direction:column}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="guide.html">← 포핏 전체 가이드</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>To the moon<br>코인일지 가이드</h1>
+  <p class="sub">거래소만 연결하면, 코인 매매도 포핏이 기록해요 🐾</p>
+</header>
+
+<nav class="toc">
+  <p>차례</p>
+  <a href="#dash">1. 대시보드 — 거래소 연결과 자산</a>
+  <a href="#diary">2. 일지 — 보유중 · 일간 · 월간</a>
+  <a href="#viz">3. 시각화 — 일간 트랙과 타임트리</a>
+</nav>
+
+<!-- ===== 1. 대시보드 ===== -->
+<section id="dash">
+  <div class="sec-tag">
+    <span class="blob-num">1</span>
+    <h2>대시보드 — 거래소 연결과 자산</h2>
+  </div>
+
+  <p class="lead">To the moon은 <b>거래소 API</b>로 코인 매매를 가져와 기록해요. 가장 먼저 거래소를 연결해 주세요.</p>
+
+  <h3>거래소 API 연결하기</h3>
+  <figure>
+    <img src="images/moon_dash.png" alt="코인 대시보드. 거래소 API 연결하기 버튼과 거래소별 자산 영역, 오른쪽 위 알림 베타 버튼" loading="lazy">
+  </figure>
+  <p><b>거래소 API 연결하기</b>를 누르고 지원 거래소 목록에서 쓰는 거래소를 고르세요. 별명(예: 장투용, 단타용)과 <b>API Key · Secret Key</b>를 넣으면 연결 끝. 키는 각 거래소 사이트에서 쉽게 발급받을 수 있어요.</p>
+  <figure class="mid">
+    <img src="images/moon_api.png" alt="바이비트 계정 추가 팝업. 별명, API Key, Secret Key 입력칸과 연결 버튼" loading="lazy">
+  </figure>
+  <div class="note"><strong>꼭! 읽기 전용(Read-only)으로.</strong> API 키는 반드시 <b>읽기 전용</b>으로 발급해서 넣으세요. 거래·출금 권한이 있는 키는 유출 시 위험합니다. 포핏은 기록만 하니까 읽기 권한이면 충분해요.</div>
+
+  <h3>알림 β — 알림으로도 기록</h3>
+  <p>오른쪽 위 <b>알림 β</b> 버튼을 누르면 베타 기능 안내가 떠요. "사용하시겠습니까?"에 예를 누르면, 폰에 오는 <b>코인 알림도 함께 기록</b>합니다.</p>
+  <div class="note"><strong>베타 기능이에요.</strong> 코인 알림 파싱의 정확도는 아직 높지 않아요. 보조 수단으로만 쓰고, 기본은 거래소 API 연결을 권장해요.</div>
+
+  <h3>자산과 분포 · 분석 페이지</h3>
+  <p>가운데에는 <b>거래소별 자산</b>과 투자 유형별 분포가 나와요(연결 전에는 비어 있어요). 화면을 <b>위로 스와이프</b>하면 분석 페이지 — <b>수익 곡선</b>과 함께, 내가 <b>어느 시간대에 거래를 많이 하는지</b> 막대그래프로 보여줍니다.</p>
+  <figure class="slim">
+    <img src="images/moon_analysis.png" alt="분석 페이지의 시간대별 거래 분포. 0시부터 24시까지 세로 타임라인에 거래가 몰린 시간대가 표시된다" loading="lazy">
+    <figcaption>밤에 몰아서 하는지, 낮에 하는지 한눈에 보여요</figcaption>
+  </figure>
+</section>
+
+<!-- ===== 2. 일지 ===== -->
+<section id="diary">
+  <div class="sec-tag">
+    <span class="blob-num pink">2</span>
+    <h2>일지 — 보유중 · 일간 · 월간</h2>
+  </div>
+
+  <p class="lead"><b>보유중 · 일간 · 월간</b> 세 화면이고, <b>현물과 선물은 페이지가 따로</b> 운영돼요. 화면 위 현물/선물 탭으로 전환합니다.</p>
+
+  <figure>
+    <img src="images/moon_day.png" alt="일간 일지. 현물 선물 탭과 BTC 카드, 그 아래 거래소별 하위 행으로 바이비트 계정이 표시된다" loading="lazy">
+    <figcaption>같은 코인이라도 거래소별로 나뉘어 표시돼요</figcaption>
+  </figure>
+
+  <p>같은 BTC라도 <b>거래소(계정)별로 따로</b> 나와요. 금액 단위는 환산하지 않고 <b>입력된 그대로의 가격</b>(USDT면 USDT)을 씁니다.</p>
+
+  <figure>
+    <img src="images/moon_month.png" alt="월간 일지. 주차별 목록에서 기록이 있는 주를 펼치면 BTC와 거래소별 행이 나온다" loading="lazy">
+    <figcaption>월간은 주차별 — 기록 있는 주를 누르면 펼쳐져요</figcaption>
+  </figure>
+
+  <h3>상세 내역 → 큰차트</h3>
+  <p>목록의 항목을 누르면 <b>상세 내역</b>이 떠요 — 진입·청산 가격, 수익금, 그리고 매수·매도 기록이 시간순으로 나옵니다.</p>
+  <figure class="mid">
+    <img src="images/moon_detail.png" alt="BTC 선물 상세 팝업. 진입과 청산 가격, 수익금, 매수 매도 기록과 큰차트 버튼" loading="lazy">
+  </figure>
+  <p><b>큰차트</b>를 누르면 차트로 이어져요. 여기서는 손익이 <b>구간 표시</b>로 칠해집니다 — 수익이었는지 손실이었는지 구간 색으로 한눈에 보여요. 코인은 <b>FIFO 방식(먼저 산 것부터 차례로 정산)</b>으로 계산되기 때문에, 매매 지점 하나하나가 아니라 구간으로 보는 게 정확하거든요.</p>
+  <figure class="mid">
+    <img src="images/moon_chart.png" alt="큰차트 화면. 캔들 차트 위에 손익 구간이 색 박스로 표시되고 아래에 매수 매도 내역이 나온다" loading="lazy">
+    <figcaption>구간 색으로 수익/손실을 표시 — 아래엔 매수·매도 내역</figcaption>
+  </figure>
+</section>
+
+<!-- ===== 3. 시각화 ===== -->
+<section id="viz">
+  <div class="sec-tag">
+    <span class="blob-num teal">3</span>
+    <h2>시각화 — 일간 트랙과 타임트리</h2>
+  </div>
+
+  <p class="lead">시각화도 현물/선물을 나눠서 봐요. 상단에서 전환하고, 거래소별 필터도 있어요.</p>
+
+  <h3>일간 — 수익은 위, 손실은 아래</h3>
+  <figure class="mid">
+    <img src="images/moon_viz_day.png" alt="일간 시각화. 윗줄에 수익 트랙, 아랫줄에 손실 트랙이 흐르고 BTC 블롭이 떠 있다" loading="lazy">
+  </figure>
+  <p>그날 청산한 매매가 두 줄로 흘러가요 — <b>윗줄은 수익, 아랫줄은 손실.</b> 블롭을 누르면 상세 내역이 뜹니다.</p>
+
+  <h3>월간 — 타임트리</h3>
+  <figure class="mid">
+    <img src="images/moon_viz_month.png" alt="월간 시각화 타임트리. 세로 줄기에서 거래가 있던 21일에 가지가 뻗고 끝에 BTC 블롭이 달려 있다" loading="lazy">
+    <figcaption>거래가 있던 날에만 가지가 자라나요</figcaption>
+  </figure>
+  <p>월간은 <b>타임트리</b> 방식이에요. 세로 줄기를 따라 <b>거래가 있던 날에만 가지</b>가 뻗고, 끝에 코인 블롭이 달립니다. 블롭을 누르면 상세 내역으로, 위쪽 필터로 거래소별로 골라 볼 수 있어요.</p>
+  <p>참고로 코인 시각화에는 포핏의 시선 기능은 없어요.</p>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="guide.html" style="margin-top:6px">← 포핏 전체 가이드로</a>
+</footer>
+
+</div>
+</body>
+</html>
