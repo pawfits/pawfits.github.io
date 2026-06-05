@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개미일기 가이드 — 포핏 매매일지</title>
+<meta name="description" content="포핏(Pawfit) 개미일기 매매일지 사용 가이드. 대시보드, 보유중·일간·월간 일지 사용법.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#3A2E22;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --pink:#F1789C;
+  --teal:#2FA98B;
+  --teal-deep:#0F6E56;
+  --coral:#D85A30;
+  --coral-deep:#993C1D;
+  --card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Gowun Dodum',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:'Jua',sans-serif;
+}
+header{
+  text-align:center;
+  padding:28px 0 40px;
+}
+.paw{
+  font-family:'Jua',sans-serif;
+  font-size:15px;
+  letter-spacing:.2em;
+  color:var(--orange-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:'Jua',sans-serif;
+  font-size:clamp(30px,8vw,40px);
+  line-height:1.3;
+  margin:10px 0 14px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+.toc{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:22px;
+  padding:20px 24px;
+  margin-bottom:56px;
+}
+.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc a{
+  display:block;
+  color:var(--ink);
+  text-decoration:none;
+  padding:6px 0;
+  font-size:16px;
+  border-bottom:1px dashed var(--cream-deep);
+}
+.toc a:last-child{border-bottom:none}
+.toc a:hover{color:var(--orange-deep)}
+section{margin-bottom:72px}
+.sec-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.blob-num{
+  font-family:'Jua',sans-serif;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  color:#fff;
+  background:var(--orange);
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  flex-shrink:0;
+}
+.blob-num.pink{background:var(--pink)}
+.blob-num.teal{background:var(--teal)}
+h2{
+  font-family:'Jua',sans-serif;
+  font-size:24px;
+  line-height:1.35;
+}
+h3{
+  font-family:'Jua',sans-serif;
+  font-size:18px;
+  margin:34px 0 10px;
+  color:var(--orange-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:18px;
+  background:var(--card);
+  border-left:5px solid var(--orange);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 24px;
+}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:280px;margin:0 auto}
+figure.mid img{max-width:380px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.duo{display:flex;gap:14px;align-items:flex-start}
+.duo figure{flex:1;margin:0}
+.duo-wrap{margin:22px 0}
+.duo-wrap figcaption{margin-top:12px}
+.svgbox{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:20px;
+  padding:18px 10px;
+  margin:24px 0;
+}
+.svgbox svg{width:100%;height:auto;display:block}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps{list-style:none;margin:18px 0;counter-reset:step}
+.steps li{
+  position:relative;
+  padding:0 0 18px 52px;
+  counter-increment:step;
+}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:'Jua',sans-serif;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:17px;
+}
+.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  .duo{flex-direction:column}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="guide.html">← 포핏 전체 가이드</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>개미일기<br>매매일지 가이드</h1>
+  <p class="sub">매매 알림만 켜두면, 일지는 포핏이 씁니다 🐾</p>
+</header>
+
+<nav class="toc">
+  <p>차례</p>
+  <a href="#dash">1. 대시보드 — 이번 달 매매 성적표</a>
+  <a href="#diary">2. 일지 — 보유중 · 일간 · 월간</a>
+  <a href="#viz">3. 시각화 — 블롭으로 보는 매매</a>
+</nav>
+
+<!-- ===== 1. 대시보드 ===== -->
+<section id="dash">
+  <div class="sec-tag">
+    <span class="blob-num">1</span>
+    <h2>대시보드 — 이번 달 매매 성적표</h2>
+  </div>
+
+  <p class="lead">홈에서 <b>개미일기</b>를 누르면 처음 보이는 화면이에요. 이번 달 매매 현황과 성과를 한눈에 봅니다.</p>
+
+  <h3>매매 현황 게이지</h3>
+  <figure>
+    <img src="images/diary_gauge.png" alt="6월 매매 현황 게이지. 1주부터 4주까지 네 칸" loading="lazy">
+  </figure>
+  <p>가계부와 똑같아요 — 일요일 마감으로 1주에 한 칸씩 차고, 지나간 주를 누르면 그 주 매매에 대해 <b>포핏이 진단 한마디</b>를 해줍니다.</p>
+
+  <h3>시장별 매매 비중</h3>
+  <p>이번 달 매매가 어느 시장에 몰려 있는지 네모 크기로 보여줘요.</p>
+  <div class="svgbox" role="img" aria-label="시장별 매매 비중 예시. 국내주식, 해외주식, 지수선물이 비중만큼 네모로 표시된다">
+    <svg viewBox="0 0 380 230" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="16" width="210" height="170" rx="10" fill="#F1789C"/>
+      <text x="125" y="92" text-anchor="middle" font-size="17" fill="#5C1228" font-family="'Jua',sans-serif">국내주식</text>
+      <text x="125" y="118" text-anchor="middle" font-size="14" fill="#7A2240">55.0%</text>
+      <rect x="238" y="16" width="122" height="106" rx="10" fill="#8FD3F4"/>
+      <text x="299" y="62" text-anchor="middle" font-size="15" fill="#0C3D5C" font-family="'Jua',sans-serif">해외주식</text>
+      <text x="299" y="86" text-anchor="middle" font-size="13" fill="#1D5C82">30.0%</text>
+      <rect x="238" y="130" width="122" height="56" rx="10" fill="#FAC775"/>
+      <text x="299" y="153" text-anchor="middle" font-size="14" fill="#633806" font-family="'Jua',sans-serif">지수선물</text>
+      <text x="299" y="173" text-anchor="middle" font-size="12.5" fill="#854F0B">15.0%</text>
+      <text x="20" y="214" font-size="13" fill="#6B5B49">※ 예시 화면 — 실제 비중은 내 매매 기록 기준</text>
+    </svg>
+  </div>
+
+  <h3>매매 성과</h3>
+  <p>이번 달 청산 기준으로 핵심 지표 네 가지가 나와요.</p>
+  <div class="svgbox" role="img" aria-label="매매 성과 예시. 승률, 총 실현손익, 최대 익절, 최대 손절 네 칸">
+    <svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg">
+      <text x="30" y="36" font-size="14" fill="#6B5B49">승률</text>
+      <text x="30" y="70" font-size="24" fill="#2FA98B" font-family="'Jua',sans-serif">58.3%</text>
+      <text x="30" y="96" font-size="13" fill="#9B8B77">14승 10패</text>
+      <text x="205" y="36" font-size="14" fill="#6B5B49">총 실현손익</text>
+      <text x="205" y="70" font-size="24" fill="#F25555" font-family="'Jua',sans-serif">+12만원</text>
+      <text x="205" y="96" font-size="13" fill="#9B8B77">24건 청산</text>
+      <text x="30" y="146" font-size="14" fill="#6B5B49">최대 익절</text>
+      <text x="30" y="180" font-size="24" fill="#F25555" font-family="'Jua',sans-serif">+8.5만원</text>
+      <text x="205" y="146" font-size="14" fill="#6B5B49">최대 손절</text>
+      <text x="205" y="180" font-size="24" fill="#4D9FE0" font-family="'Jua',sans-serif">-4.2만원</text>
+      <text x="30" y="210" font-size="13" fill="#6B5B49">※ 예시 화면</text>
+    </svg>
+  </div>
+
+  <h3>투자 기간별 추이 (대시보드 2페이지)</h3>
+  <p>화면을 <b>위로 스와이프</b>하면 기간별 손익 곡선이 나와요. 1개월·3개월·6개월·1년을 골라 흐름을 볼 수 있습니다.</p>
+  <div class="svgbox" role="img" aria-label="기간별 손익 곡선 예시. 기간 버튼과 월별 영역, 손익 곡선">
+    <svg viewBox="0 0 380 230" xmlns="http://www.w3.org/2000/svg">
+      <rect x="118" y="16" width="62" height="28" rx="14" fill="#F59E3C"/>
+      <text x="149" y="35" text-anchor="middle" font-size="13" fill="#fff" font-family="'Jua',sans-serif">3개월</text>
+      <rect x="48" y="16" width="62" height="28" rx="14" fill="#F8E8D4"/>
+      <text x="79" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">1개월</text>
+      <rect x="188" y="16" width="62" height="28" rx="14" fill="#F8E8D4"/>
+      <text x="219" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">6개월</text>
+      <rect x="258" y="16" width="48" height="28" rx="14" fill="#F8E8D4"/>
+      <text x="282" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">1년</text>
+      <line x1="40" y1="130" x2="350" y2="130" stroke="#E5D5BE" stroke-width="1"/>
+      <path d="M50 150 C 110 160, 140 90, 195 80 S 300 120, 340 70" fill="none" stroke="#F25555" stroke-width="4" stroke-linecap="round"/>
+      <text x="80" y="200" text-anchor="middle" font-size="13" fill="#6B5B49">4월</text>
+      <text x="195" y="200" text-anchor="middle" font-size="13" fill="#6B5B49">5월</text>
+      <text x="310" y="200" text-anchor="middle" font-size="13" fill="#6B5B49">6월</text>
+      <text x="40" y="225" font-size="13" fill="#6B5B49">※ 예시 화면 — 월별 손익 추이</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== 2. 일지 ===== -->
+<section id="diary">
+  <div class="sec-tag">
+    <span class="blob-num pink">2</span>
+    <h2>일지 — 보유중 · 일간 · 월간</h2>
+  </div>
+
+  <p class="lead">일지에는 <b>보유중 · 일간 · 월간</b> 세 화면이 있어요. 상단 탭을 누르거나 <b>화면을 좌우로 스와이프</b>해서 오갑니다. 모든 화면 맨 위에는 합계 수익이 나와요.</p>
+
+  <h3>보유중 — 들고 있는 포지션</h3>
+  <figure>
+    <img src="images/diary_holding.png" alt="보유중 목록의 종목 카드. 종목명과 수익률, 수량, 단가, 최근 캔들이 표시된다" loading="lazy">
+  </figure>
+  <p>현재 보유 중인 종목이 <b>수익률</b>과 함께 나와요. 부분청산한 포지션도 남은 수량이 있으면 여기 있습니다.</p>
+  <div class="note"><strong>참고:</strong> 현재 버전의 수익률은 <b>하루 전 시세</b>를 이용해서 계산돼요. 실시간 시세와는 차이가 있을 수 있어요.</div>
+  <p>종목을 <b>탭하면 상세 매매내역</b>이 떠요. 회차별 매수·매도 기록과 포지션 상태를 볼 수 있어요.</p>
+  <figure class="mid">
+    <img src="images/diary_detail.png" alt="종목 상세 팝업. 1회차 매매의 매수 기록 두 건과 포지션 진행중 상태, 큰차트 버튼" loading="lazy">
+    <figcaption>※ 예시 화면 · 오른쪽 위 큰차트 버튼을 눌러보세요</figcaption>
+  </figure>
+  <p><b>큰차트</b> 버튼을 누르면 차트 위에 <b>내가 매매한 지점이 표시</b>돼요. 어디서 사고팔았는지 캔들과 함께 복기할 수 있습니다.</p>
+  <figure class="mid">
+    <img src="images/diary_chart.png" alt="큰차트 화면. 캔들 차트 위에 매수 지점이 B 마커로 표시되고 아래에 상세내역이 나온다" loading="lazy">
+    <figcaption>※ 예시 화면 · B 마커가 매수 지점</figcaption>
+  </figure>
+
+  <h3>일간 — 그날 청산한 매매</h3>
+  <figure>
+    <img src="images/diary_day.png" alt="일간 화면. 날짜 이동, 총 합산 수익과 국내 해외 분리 표시, 종목별 수익 카드" loading="lazy">
+    <figcaption>※ 금액은 예시 · 국내/해외 수익이 나뉘어 표시돼요</figcaption>
+  </figure>
+  <p>그날 <b>청산된 매매의 수익금</b>과 그동안의 매매 내역이 나와요. 기록 기준은 <b>청산한 날</b>이에요 — 예전부터 들고 있던 종목이라도 오늘 청산하면 오늘 날짜에 기록됩니다. 아직 청산 안 된 부분청산 포지션은 보유중에 남아 있어요.</p>
+
+  <h3>월간 — 주차별로 보기</h3>
+  <figure>
+    <img src="images/diary_month.png" alt="월간 화면. 6월 총 합산 수익과 주차별 목록. 첫 주에 5종목 67건이 표시된다" loading="lazy">
+    <figcaption>※ 금액은 예시</figcaption>
+  </figure>
+  <p>월간은 <b>주차별</b>로 정리돼요. 주차를 누르면 그 주에 청산한 종목들이 나오고, 종목마다 상세 내역·차트·정산 금액을 볼 수 있습니다.</p>
+  <figure>
+    <img src="images/diary_week.png" alt="주차 상세 화면. 그 주에 거래한 종목 카드들이 건수, 수익금, 미니 캔들과 함께 나열된다" loading="lazy">
+    <figcaption>※ 금액은 예시 · 종목 카드를 누르면 상세·차트로 이동</figcaption>
+  </figure>
+</section>
+
+
+<!-- ===== 3. 시각화 ===== -->
+<section id="viz">
+  <div class="sec-tag">
+    <span class="blob-num teal">3</span>
+    <h2>시각화 — 블롭으로 보는 매매</h2>
+  </div>
+
+  <p class="lead">매매 결과를 블롭으로 봐요. 시각화도 <b>보유중 · 일간 · 월간</b> 세 화면으로 되어 있고, 더블탭으로 이동합니다.</p>
+
+  <div class="svgbox" role="img" aria-label="시각화 3개 화면 이동 지도. 상하 더블탭은 보유중과 일간 또는 월간을 오가고, 좌우 더블탭은 일간과 월간을 오간다. 보유중에서는 좌우 더블탭 기능이 없다">
+    <svg viewBox="0 0 380 350" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="dm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#C9B79C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <rect x="115" y="26" width="150" height="52" rx="14" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1"/>
+      <text x="190" y="58" text-anchor="middle" font-size="15" fill="#854F0B" font-family="'Jua',sans-serif">보유중</text>
+      <rect x="20" y="198" width="150" height="52" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+      <text x="95" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">일간</text>
+      <rect x="210" y="198" width="150" height="52" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+      <text x="285" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">월간</text>
+      <line x1="108" y1="190" x2="158" y2="90" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>
+      <line x1="272" y1="190" x2="222" y2="90" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>
+      <line x1="176" y1="224" x2="204" y2="224" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>
+      <text x="190" y="296" text-anchor="middle" font-size="14" fill="#6B5B49">↕ 상하 더블탭 : 보유중 ↔ 일간·월간</text>
+      <text x="190" y="322" text-anchor="middle" font-size="14" fill="#6B5B49">↔ 좌우 더블탭 : 일간 ↔ 월간 (보유중에선 없음)</text>
+    </svg>
+  </div>
+
+  <h3>보유중</h3>
+  <figure class="mid">
+    <img src="images/diary_viz_holding.png" alt="보유중 시각화. 보유 종목이 블롭으로 떠 있고 안에 수익률이 표시된다" loading="lazy">
+    <figcaption>※ 예시 화면 · 보유 종목이 수익률과 함께 블롭으로 떠요</figcaption>
+  </figure>
+
+  <h3>일간 — 수익은 위, 손실은 아래</h3>
+  <figure class="mid">
+    <img src="images/diary_viz_day.png" alt="일간 시각화. 윗줄에는 수익 종목 블롭이, 아랫줄에는 손실 종목 블롭이 흘러간다" loading="lazy">
+    <figcaption>※ 금액은 예시</figcaption>
+  </figure>
+  <p>그날 청산한 매매가 두 줄로 흘러가요 — <b>윗줄은 수익</b> 종목, <b>아랫줄은 손실</b> 종목. 블롭을 누르면 상세 매매내역이 뜹니다.</p>
+  <figure class="mid">
+    <img src="images/diary_viz_detail.png" alt="블롭을 누르면 나오는 상세 매매내역. 숏 포지션의 진입과 청산 가격이 표시된다" loading="lazy">
+    <figcaption>※ 금액은 예시 · 진입·청산 내역과 큰차트 버튼</figcaption>
+  </figure>
+
+  <h3>월간 — 정렬·드래그·줌</h3>
+  <figure class="mid">
+    <img src="images/diary_viz_month.png" alt="월간 시각화. 상단에 6월 총손익과 날짜순 수익순 정렬 버튼, 종목 블롭들이 떠 있다" loading="lazy">
+    <figcaption>※ 금액은 예시 · 오른쪽 위 날짜순/수익순 정렬 버튼</figcaption>
+  </figure>
+  <p>맨 위에 이번 달 <b>총손익</b>이 나오고, <b>날짜순 · 수익순</b> 버튼으로 블롭을 줄 세울 수 있어요. 조작은 가계부 시각화와 똑같아요 — 블롭을 <b>꾹 누른 채로 끌면</b> 자리를 옮기고, 두 손가락으로 <b>줌</b>, 화면을 끌면 <b>팬 스크롤</b>이 됩니다.</p>
+
+  <h3>상세 → 큰차트 → 포핏의 시선</h3>
+  <p>블롭을 누르면 <b>사이클별 매매 내역</b>(진입·청산)이 나와요.</p>
+  <figure class="mid">
+    <img src="images/diary_viz_cycle.png" alt="사이클별 상세 내역. 숏과 롱 사이클의 진입 청산 가격과 손익이 나열된다" loading="lazy">
+    <figcaption>※ 금액은 예시</figcaption>
+  </figure>
+  <p><b>큰차트</b>로 들어가면 차트와 매매 내역을 함께 볼 수 있고, 오른쪽 위에 <b>👀 포핏의 시선</b> 버튼이 있어요.</p>
+  <figure class="mid">
+    <img src="images/diary_viz_chart.png" alt="큰차트 화면. 캔들 차트와 함께 오른쪽 위에 포핏의 시선 버튼이 보인다" loading="lazy">
+  </figure>
+  <p>포핏의 시선이 <b>활성화되어 있을 때</b> 누르면, 그 매매에 대해 포핏이 한마디 해줍니다 — 잘했으면 칭찬, 아쉬우면 팩폭이에요.</p>
+  <figure class="mid">
+    <img src="images/diary_viz_sight.png" alt="포핏의 시선 멘트 팝업. 해당 매매에 대해 포핏이 유머러스하게 평가해준다" loading="lazy">
+    <figcaption>※ 예시 화면</figcaption>
+  </figure>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="guide.html" style="margin-top:6px">← 포핏 전체 가이드로</a>
+</footer>
+
+</div>
+</body>
+</html>
