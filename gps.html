@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내돈GPS 가이드 — 포핏 가계부</title>
+<meta name="description" content="포핏(Pawfit) 내돈GPS 가계부 사용 가이드. 대시보드, 소비 목표 물탱크, 일지, 시각화 사용법.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#3A2E22;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --pink:#F1789C;
+  --teal:#2FA98B;
+  --teal-deep:#0F6E56;
+  --coral:#D85A30;
+  --coral-deep:#993C1D;
+  --card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Gowun Dodum',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:'Jua',sans-serif;
+}
+header{
+  text-align:center;
+  padding:28px 0 40px;
+}
+.paw{
+  font-family:'Jua',sans-serif;
+  font-size:15px;
+  letter-spacing:.2em;
+  color:var(--orange-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:'Jua',sans-serif;
+  font-size:clamp(30px,8vw,40px);
+  line-height:1.3;
+  margin:10px 0 14px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+.toc{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:22px;
+  padding:20px 24px;
+  margin-bottom:56px;
+}
+.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc a{
+  display:block;
+  color:var(--ink);
+  text-decoration:none;
+  padding:6px 0;
+  font-size:16px;
+  border-bottom:1px dashed var(--cream-deep);
+}
+.toc a:last-child{border-bottom:none}
+.toc a:hover{color:var(--orange-deep)}
+section{margin-bottom:72px}
+.sec-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.blob-num{
+  font-family:'Jua',sans-serif;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  color:#fff;
+  background:var(--orange);
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  flex-shrink:0;
+}
+.blob-num.pink{background:var(--pink)}
+.blob-num.teal{background:var(--teal)}
+h2{
+  font-family:'Jua',sans-serif;
+  font-size:24px;
+  line-height:1.35;
+}
+h3{
+  font-family:'Jua',sans-serif;
+  font-size:18px;
+  margin:34px 0 10px;
+  color:var(--orange-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:18px;
+  background:var(--card);
+  border-left:5px solid var(--orange);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 24px;
+}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:280px;margin:0 auto}
+figure.mid img{max-width:380px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.duo{display:flex;gap:14px;align-items:flex-start}
+.duo figure{flex:1;margin:0}
+.duo-wrap{margin:22px 0}
+.duo-wrap figcaption{margin-top:12px}
+.svgbox{
+  background:var(--card);
+  border:1.5px solid var(--cream-deep);
+  border-radius:20px;
+  padding:18px 10px;
+  margin:24px 0;
+}
+.svgbox svg{width:100%;height:auto;display:block}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps{list-style:none;margin:18px 0;counter-reset:step}
+.steps li{
+  position:relative;
+  padding:0 0 18px 52px;
+  counter-increment:step;
+}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:'Jua',sans-serif;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:17px;
+}
+.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  .duo{flex-direction:column}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="guide.html">← 포핏 전체 가이드</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>내돈GPS<br>가계부 가이드</h1>
+  <p class="sub">내 돈이 어디로 가는지, 포핏이 추적해 드려요 🐾</p>
+</header>
+
+<nav class="toc">
+  <p>차례</p>
+  <a href="#dash">1. 대시보드 — 한눈에 보는 이번 달</a>
+  <a href="#diary">2. 일지 — 일간·월간 기록 보기</a>
+  <a href="#viz">3. 시각화 — 블롭으로 보는 내 소비</a>
+</nav>
+
+<!-- ===== 1. 대시보드 ===== -->
+<section id="dash">
+  <div class="sec-tag">
+    <span class="blob-num">1</span>
+    <h2>대시보드 — 한눈에 보는 이번 달</h2>
+  </div>
+
+  <p class="lead">홈에서 <b>내돈GPS</b>를 누르면 처음 보이는 화면이에요. 이번 달 기록 현황, 소비 목표, 합계를 한 번에 봅니다.</p>
+
+  <h3>기록 현황 게이지</h3>
+  <figure>
+    <img src="images/gps_gauge.png" alt="6월 기록 현황 게이지. 1주부터 4주까지 네 칸이고 1주 칸이 일부 채워져 있다" loading="lazy">
+  </figure>
+  <p>한 달을 주 단위 네 칸으로 보여줘요. <b>일요일 마감</b>으로 1주일에 한 칸씩 찹니다. 지나간 주(어둡게 변한 칸)를 누르면 그 주 소비에 대해 <b>포핏이 진단 한마디</b>를 해줘요. 사용 기간이 짧으면 아직 분석할 내용이 없다고 나올 수 있어요.</p>
+
+  <figure class="slim">
+    <img src="images/gps_diagnosis.png" alt="포핏 진단 팝업. 3주차 가계부 소비에 대해 포핏이 유머러스하게 한마디 하는 화면" loading="lazy">
+    <figcaption>주차 칸을 누르면 나오는 포핏 진단</figcaption>
+  </figure>
+
+  <h3>소비 목표 — 물탱크</h3>
+  <figure class="mid">
+    <img src="images/gps_tank_all.png" alt="전체 소비 탱크 카드. 이달 전체 지출 129,243원이 목표 2,000,000원 대비 물 높이로 표시된다" loading="lazy">
+  </figure>
+  <p>소비 유형마다 물탱크가 하나씩 있어요(좌우로 넘겨보기). <b>돈을 쓸수록 물이 차오르고</b>, 목표를 넘으면 초과로 표시됩니다.</p>
+  <p>탱크를 <b>탭하면 팝업으로 목표 금액 입력칸</b>이 떠요. 설정하지 않은 항목은 <b>이전 달 소비 기록이 기본 목표</b>로 잡히고, 나중에 언제든 바꿀 수 있어요.</p>
+  <div class="note"><strong>처음 시작이라면?</strong> 첫 달은 비교할 지난달 기록이 없어서 물이 살짝 담긴 상태로 떠요. 목표 금액을 바로 설정하면 그때부터 기능이 작동합니다.</div>
+
+  <h3>탱크 묶어서 관리하기</h3>
+  <p>비슷한 유형은 탱크를 묶어 하나의 목표로 관리할 수 있어요. 탱크 카드의 <b>+ 버튼</b>으로 묶고, 다시 눌러 뺄 수 있습니다.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure>
+        <img src="images/gps_tank_plus.png" alt="골프 탱크 카드. 오른쪽 위에 묶기용 + 버튼이 있다" loading="lazy">
+      </figure>
+      <figure>
+        <img src="images/gps_tank_link.png" alt="묶는 중 안내 행과 묶음 칩 두 개. 남이 차려준 밥 외 6과 골프 묶음이 표시되어 있다" loading="lazy">
+      </figure>
+    </div>
+    <figcaption>+ 버튼으로 추가/빼기 → 완료 · 묶인 탱크는 아래에 묶음으로 표시돼요</figcaption>
+  </div>
+
+  <h3>이달 합계</h3>
+  <figure>
+    <img src="images/gps_total.png" alt="이달 합계. 2026년 6월 수입 0원, 지출 129,243원이 막대로 표시된다" loading="lazy">
+  </figure>
+  <p>대시보드 맨 아래에는 월별 <b>수입·지출 합산</b>이 막대로 나와요. 달력 버튼으로 다른 달도 볼 수 있어요.</p>
+
+  <h3>소비 유형별 비교 (대시보드 2페이지)</h3>
+  <p>화면을 <b>위로 스와이프</b>하면 비교 페이지가 나와요. 3개월·6개월·1년 기간을 골라 월별 지출을 막대로 비교하고, 오른쪽 필터로 <b>전체 ↔ 소비 유형별</b>을 전환할 수 있습니다.</p>
+
+  <div class="svgbox" role="img" aria-label="기간별 비교 그래프 모식도. 기간 버튼과 월별 막대 세 개">
+    <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="20" width="64" height="30" rx="15" fill="#F59E3C"/>
+      <text x="62" y="40" text-anchor="middle" font-size="13" fill="#fff" font-family="'Jua',sans-serif">3개월</text>
+      <rect x="102" y="20" width="64" height="30" rx="15" fill="#F8E8D4"/>
+      <text x="134" y="40" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">6개월</text>
+      <rect x="174" y="20" width="48" height="30" rx="15" fill="#F8E8D4"/>
+      <text x="198" y="40" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">1년</text>
+      <rect x="282" y="20" width="68" height="30" rx="15" fill="#F8E8D4"/>
+      <text x="316" y="40" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">전체 ▾</text>
+      <rect x="60" y="120" width="70" height="80" rx="8" fill="#F9B8CB"/>
+      <rect x="155" y="80" width="70" height="120" rx="8" fill="#F1789C"/>
+      <rect x="250" y="150" width="70" height="50" rx="8" fill="#F9B8CB"/>
+      <text x="95" y="222" text-anchor="middle" font-size="13" fill="#6B5B49">4월</text>
+      <text x="190" y="222" text-anchor="middle" font-size="13" fill="#6B5B49">5월</text>
+      <text x="285" y="222" text-anchor="middle" font-size="13" fill="#6B5B49">6월</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== 2. 일지 ===== -->
+<section id="diary">
+  <div class="sec-tag">
+    <span class="blob-num pink">2</span>
+    <h2>일지 — 일간·월간 기록 보기</h2>
+  </div>
+
+  <p class="lead">기록된 내역을 시간순으로 보는 화면이에요. 상단 탭으로 <b>일간 ↔ 월간</b>을 오갑니다.</p>
+
+  <figure>
+    <img src="images/gps_day_head.png" alt="일지 상단. 일간과 월간 탭, 날짜 이동 화살표, 지출과 수입 합계" loading="lazy">
+    <figcaption>날짜 옆 화살표로 다른 날·다른 달로 이동</figcaption>
+  </figure>
+
+  <h3>일간</h3>
+  <figure>
+    <img src="images/gps_day_cards.png" alt="일간 타임라인. 15시와 00시 항목 카드가 시간 라벨과 함께 나열되고 카드마다 미니 물탱크가 있다" loading="lazy">
+  </figure>
+  <p>하루 내역이 <b>시간 타임라인</b>으로 나와요. 카드마다 붙은 <b>미니 물탱크</b>는 대시보드의 그 탱크예요 — 해당 소비 유형의 현재 누적이 얼마나 찼는지 항목 옆에서 바로 보여줍니다.</p>
+
+  <h3>월간</h3>
+  <figure>
+    <img src="images/gps_month_filter.png" alt="월간 상단의 요일 버튼 일곱 개와 그 아래 소비 유형별 탱크 필터. 전체 탱크가 선택되어 있다" loading="lazy">
+  </figure>
+  <p>월간에서는 내역이 <b>날짜 라인</b>으로 정렬돼요. 위쪽 <b>요일 버튼</b>을 누르면 그 요일의 소비만 모아볼 수 있고, 그 아래 <b>탱크들이 필터 버튼</b>이에요 — 유형별 누적을 한 줄에서 한 번에 보고, 탱크를 누르면 그 유형 내역만 화면에 표시됩니다.</p>
+
+  <h3>상세 보기 · 수정 · 삭제</h3>
+  <p>목록의 항목을 <b>탭하면 상세 내역</b>이 떠요. 거기서 수정·삭제할 수 있습니다.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure>
+        <img src="images/gps_detail.png" alt="지출 상세 팝업. 결제일, 결제처, 금액, 시간, 유형이 나오고 아래에 삭제 수정 닫기 버튼이 있다" loading="lazy">
+      </figure>
+      <figure>
+        <img src="images/gps_edit.png" alt="가계부 내역 수정 팝업. 결제처, 카테고리, 금액 입력칸과 수입 지출 토글, 저장 버튼" loading="lazy">
+      </figure>
+    </div>
+    <figcaption>항목 탭 → 상세 → 수정에서 결제처·카테고리·금액·수입/지출까지 변경 가능</figcaption>
+  </div>
+</section>
+
+<!-- ===== 3. 시각화 ===== -->
+<section id="viz">
+  <div class="sec-tag">
+    <span class="blob-num teal">3</span>
+    <h2>시각화 — 블롭으로 보는 내 소비</h2>
+  </div>
+
+  <p class="lead">숫자 대신 그림으로 봐요. 소비 유형마다 말랑한 <b>블롭</b>이 하나씩 떠 있고, <b>금액이 클수록 블롭이 크고 진해집니다.</b></p>
+
+  <figure class="mid">
+    <img src="images/viz_blobs.png" alt="시각화 화면. 소비 유형별 블롭들이 크기와 색 농도를 달리하며 자유롭게 떠 있다" loading="lazy">
+  </figure>
+
+  <h3>화면 4개 — 더블탭으로 이동</h3>
+  <p>시각화에는 <b>일간 지출 · 일간 수입 · 월간 지출 · 월간 수입</b>, 총 4개의 화면이 있어요. 화면에 표시되는 더블탭 안내(원 두 개 애니메이션)를 따라 이동합니다.</p>
+
+  <div class="svgbox" role="img" aria-label="시각화 4개 화면 이동 지도. 좌우 더블탭은 일간과 월간을, 상하 더블탭은 지출과 수입을 오간다">
+    <svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="da" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#C9B79C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <rect x="30" y="30" width="150" height="56" rx="14" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+      <text x="105" y="64" text-anchor="middle" font-size="15" fill="#993C1D" font-family="'Jua',sans-serif">일간 지출</text>
+      <rect x="200" y="30" width="150" height="56" rx="14" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+      <text x="275" y="64" text-anchor="middle" font-size="15" fill="#993C1D" font-family="'Jua',sans-serif">월간 지출</text>
+      <rect x="30" y="180" width="150" height="56" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+      <text x="105" y="214" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">일간 수입</text>
+      <rect x="200" y="180" width="150" height="56" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+      <text x="275" y="214" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">월간 수입</text>
+      <line x1="184" y1="58" x2="196" y2="58" stroke="#C9B79C" stroke-width="2" marker-start="url(#da)" marker-end="url(#da)"/>
+      <line x1="184" y1="208" x2="196" y2="208" stroke="#C9B79C" stroke-width="2" marker-start="url(#da)" marker-end="url(#da)"/>
+      <line x1="105" y1="94" x2="105" y2="172" stroke="#C9B79C" stroke-width="2" marker-start="url(#da)" marker-end="url(#da)"/>
+      <line x1="275" y1="94" x2="275" y2="172" stroke="#C9B79C" stroke-width="2" marker-start="url(#da)" marker-end="url(#da)"/>
+      <text x="190" y="278" text-anchor="middle" font-size="14" fill="#6B5B49">↔ 좌우 더블탭 : 일간 ↔ 월간</text>
+      <text x="190" y="302" text-anchor="middle" font-size="14" fill="#6B5B49">↕ 상하 더블탭 : 지출 ↔ 수입</text>
+    </svg>
+  </div>
+
+  <p>예를 들어 <b>일간 지출</b>에서 화면 위나 아래를 더블탭하면 <b>일간 수입</b>으로, 거기서 좌우를 더블탭하면 <b>월간 수입</b>으로 넘어가는 식이에요. 좌우는 방향 구분 없이 일간↔월간이 번갈아 바뀝니다.</p>
+
+  <h3>월간 정렬 — 블롭 줄 세우기</h3>
+  <figure>
+    <img src="images/viz_topbar.png" alt="시각화 상단 바. 금액순과 카테고리순 정렬 버튼, 5월 월간 지출 표시" loading="lazy">
+  </figure>
+  <p>월간 화면 왼쪽 위에는 <b>금액순 · 카테고리순</b> 정렬 버튼이 있어요(일간에는 없어요). 누르면 꾸물거리던 블롭들이 움직여서 <b>줄을 섭니다.</b> 다시 누르면 해제돼요.</p>
+  <figure class="mid">
+    <img src="images/viz_sorted.png" alt="금액순 정렬을 누른 모습. 블롭들이 금액 크기 순서대로 줄을 서 있다" loading="lazy">
+    <figcaption>금액순을 누르면 큰 지출부터 차례로 정렬</figcaption>
+  </figure>
+
+  <h3>블롭 옮기기 · 상세 보기</h3>
+  <p>블롭은 <b>꾹 누른 채로 끌면(롱프레스 드래그)</b> 원하는 자리로 옮길 수 있어요. 겹쳐서 안 보이면 보기 편하게 배치하면 됩니다.</p>
+  <p>블롭을 <b>탭하면 그 유형의 상세 내역</b>이 떠요. 항목 오른쪽 <b>점 세 개(⋮)</b>를 누르면 수정·삭제할 수 있습니다.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure>
+        <img src="images/viz_detail.png" alt="블롭을 탭하면 나오는 상세 내역 창. 날짜와 결제처, 금액이 표시된다" loading="lazy">
+      </figure>
+      <figure>
+        <img src="images/viz_edit.png" alt="상세 내역에서 점 세 개를 누르면 나오는 수정과 삭제 메뉴" loading="lazy">
+      </figure>
+    </div>
+    <figcaption>블롭 탭 → 상세 내역 · ⋮ 버튼 → 수정/삭제</figcaption>
+  </div>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="guide.html" style="margin-top:6px">← 포핏 전체 가이드로</a>
+</footer>
+
+</div>
+</body>
+</html>
