@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>포핏플레이 가이드 — 포핏 AI 플레이그라운드</title>
-<meta name="description" content="포핏(Pawfit) 포핏플레이 사용 가이드. 예상노트 AI 차트 검증, Dr.포핏 월간 진단.">>
+<meta name="description" content="포핏(Pawfit) 포핏플레이 사용 가이드. 예상노트 AI 차트 검증, 포핏 플렉스 특별일정 모아보기.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -197,18 +197,18 @@ footer .paw{display:block;margin-bottom:6px}
 <header>
   <span class="paw">Pawfit! 포핏!!</span>
   <h1>포핏플레이<br>AI 플레이그라운드</h1>
-  <p class="sub">그림 그리고, 진단받고 — 포핏과 노는 곳 🐾</p>
+  <p class="sub">그림 그리고, 특별일정 모아보고 — 포핏과 노는 곳 🐾</p>
 </header>
 
 <nav class="toc">
   <p>차례</p>
   <a href="#note">1. 예상노트 — 그리면 포핏이 봐줘요</a>
-  <a href="#doctor">2. Dr.포핏 — 월간 AI 진단</a>
+  <a href="#flex">2. 포핏 플렉스 — 특별일정 모아보기</a>
 </nav>
 
 <figure class="mid">
   <img src="images/play_menu.png" alt="포핏플레이 메뉴. 예상노트와 Dr.포핏 두 가지가 있다" loading="lazy">
-  <figcaption>포핏플레이에는 지금 두 가지 놀이가 있어요</figcaption>
+  <figcaption>포핏플레이엔 두 가지 — 예상노트와 포핏 플렉스</figcaption>
 </figure>
 
 <!-- ===== 1. 예상노트 ===== -->
@@ -248,25 +248,41 @@ footer .paw{display:block;margin-bottom:6px}
   <div class="note"><strong>참고용이에요.</strong> AI 분석에는 오류나 부정확한 내용이 있을 수 있어요. 투자 판단은 꼭 직접 확인하고 하세요.</div>
 </section>
 
-<!-- ===== 2. Dr.포핏 ===== -->
-<section id="doctor">
+<!-- ===== 2. 포핏 플렉스 ===== -->
+<section id="flex">
   <div class="sec-tag">
     <span class="blob-num pink">2</span>
-    <h2>Dr.포핏 — 월간 AI 진단</h2>
+    <h2>포핏 플렉스 — 특별일정 모아보기</h2>
   </div>
 
-  <p class="lead">한 달 치 기록이 쌓이면 받는 <b>월간 정밀 진단</b>이에요. 가계부·매매일지 대시보드의 게이지가 그 진행률이에요.</p>
+  <p class="lead">여행·행사처럼 <b>특정 기간의 지출을 따로 묶어서</b> 보는 기능이에요. 시작·진행은 <b>홈 2페이지</b>에서 하고(<a href="guide.html#home" style="color:var(--orange-deep)">홈화면 가이드</a>), 여기 포핏플레이에선 <b>끝난 일정들을 모아보고 정리</b>해요.</p>
 
-  <figure>
-    <img src="images/play_doctor.png" alt="Dr.포핏 화면. 소비 진단 다시보기 카드와 투자 진단 진행률 게이지" loading="lazy">
-    <figcaption>이번 달 게이지가 차오르는 중 — 다 차면 진단 가능</figcaption>
-  </figure>
-  <p><b>소비 진단</b>(가계부)과 <b>투자 진단</b>(매매일지)이 따로 있고, 월간 게이지가 다 차면 <b>한 달에 한 번</b> 진단을 받을 수 있어요. 지난달 진단은 언제든 다시 볼 수 있습니다.</p>
+  <h3>끝나면 이렇게 정리돼요</h3>
+  <p>일정을 <b>종료</b>하면 일반 모드로 돌아오고, 시작할 때 고른 <b>"가계부 합산에서 제외"</b> 여부에 따라 두 갈래로 정리됩니다.</p>
+  <p><b>가계부에 포함한 일정</b>은 가계부 일지에 <b>"특별일정" 합계 줄</b>(보라 테두리)로 한 줄 뜨고, <b>월간 시각화</b>엔 일정마다 <b>블롭 한 개</b>(이름 = 일정명)로 떠요. 블롭을 탭하면 <b>"🧳 플렉스에서 보기"</b>로 그 일정 상세까지 바로 갈 수 있어요.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure><img src="images/flex_tag_day.png" alt="가계부 일간 일지에 특별일정 합계 카드가 보라 테두리로 표시된다" loading="lazy"></figure>
+      <figure><img src="images/flex_viz_blob.png" alt="월간 시각화에 부산 2박3일, 가을 캠핑 등 특별일정이 블롭으로 떠 있다" loading="lazy"></figure>
+    </div>
+    <figcaption>가계부 일지엔 "특별일정" 합계로 · 월간 시각화엔 블롭으로</figcaption>
+  </div>
+  <p><b>가계부에서 제외한 일정</b>은 가계부 <b>합산·진단에서 빠지고</b>, 작은 표식만 남아요(탭하면 아카이브로).</p>
 
-  <figure class="mid">
-    <img src="images/play_doctor_result.png" alt="소비 월간 진단 멘트. 한 달 소비 총평과 다음 달 미션을 제안해준다" loading="lazy">
-    <figcaption>한 달 총평 + 다음 달 미션까지 챙겨줘요</figcaption>
-  </figure>
+  <h3>모아보기 — 아카이브</h3>
+  <p>지금 이 화면, <b>포핏플레이 → 🧳 포핏 플렉스</b>에서 <b>전체 일정 목록</b>을 봐요. 일정을 누르면 <b>기간·합계·항목·메모</b>가 담긴 상세로 들어갑니다.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure><img src="images/flex_list.png" alt="포핏 플렉스 일정 목록. 가을 캠핑, 친구 결혼식, 부산 2박3일, 제주도 여행 카드가 사진과 함께 나열된다" loading="lazy"></figure>
+      <figure><img src="images/flex_detail.png" alt="제주도 여행 상세. 기간과 합계, 항공·호텔·렌터카 항목 내역과 내보내기·메모" loading="lazy"></figure>
+    </div>
+    <figcaption>일정 목록 → 탭 → 상세(항목 내역 · 빼기 · 내보내기 · 메모)</figcaption>
+  </div>
+
+  <h3>일정 메모</h3>
+  <p>일정 자체에도 메모를 남길 수 있어요(기록 화면이나 상세의 <b>"+ 메모"</b>). 항목별 메모와는 별개예요.</p>
+
+  <div class="note"><strong>데이터는 안전해요.</strong> 플렉스는 원본 기록은 그대로 두고 <b>"이 일정 소속"이라는 표시만</b> 붙이는 방식이에요. 그래서 일정에서 항목을 <b>빼면(제외) 원래 가계부 자리로 그대로 돌아가요</b> — 기록이 바뀌거나 사라지지 않습니다.</div>
 </section>
 
 <footer>
