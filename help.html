@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포핏 도움말</title>
+<meta name="description" content="포핏(Pawfit) 화면별 도움말 — 홈 2페이지, 포핏 호출.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7; --cream-deep:#F8E8D4; --ink:#3A2E22; --ink-soft:#6B5B49;
+  --orange:#F59E3C; --orange-deep:#C77419; --pink:#F1789C; --teal:#2FA98B; --card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 20px 60px}
+.paw{font-family:'Jua',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase;display:block;text-align:center;margin-bottom:6px}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;}
+.blob-num{font-family:'Jua',sans-serif;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--orange);border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;flex-shrink:0;}
+.blob-num.pink{background:var(--pink)}
+.blob-num svg{width:24px;height:24px}
+h2{font-family:'Jua',sans-serif;font-size:24px;line-height:1.35;}
+h3{font-family:'Jua',sans-serif;font-size:18px;margin:28px 0 10px;color:var(--orange-deep);}
+p{margin-bottom:14px}
+.lead{font-size:18px;background:var(--card);border-left:5px solid var(--orange);padding:16px 20px;border-radius:0 16px 16px 0;margin:16px 0 22px;}
+figure{margin:22px 0}
+figure img{width:100%;height:auto;display:block;border-radius:18px;border:1.5px solid var(--cream-deep);}
+figure.slim img{max-width:280px;margin:0 auto}
+figure.mid img{max-width:380px;margin:0 auto}
+figcaption{font-size:14px;color:var(--ink-soft);text-align:center;margin-top:10px;padding:0 8px;}
+.note{background:#FFF3DB;border:1.5px solid #F4D9A8;border-radius:16px;padding:14px 18px;font-size:15px;color:#7A5512;margin:18px 0;}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps{list-style:none;margin:16px 0;counter-reset:step}
+.steps li{position:relative;padding:0 0 16px 50px;counter-increment:step;}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;font-family:'Jua',sans-serif;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;font-size:16px;}
+.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+.more{display:inline-block;margin-top:18px;font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);text-decoration:none;border:1.5px solid var(--cream-deep);background:var(--card);border-radius:14px;padding:10px 16px;}
+.idx a{display:block;color:var(--ink);text-decoration:none;padding:14px 16px;font-size:17px;background:var(--card);border:1.5px solid var(--cream-deep);border-radius:16px;margin-bottom:12px;}
+.idx a b{font-family:'Jua',sans-serif;font-weight:400;color:var(--orange-deep)}
+.topic,#index{display:none}
+.topic.active,#index.active{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="paw">Pawfit! 포핏!!</span>
+
+<!-- 기본(해시 없을 때) -->
+<div id="index" class="idx">
+  <h2 style="text-align:center;margin-bottom:20px">포핏 도움말</h2>
+  <a href="#home2"><b>홈 2페이지</b> — 특별일정 & 메모</a>
+  <a href="#call"><b>포핏 호출</b> — 말하듯 기록·검색</a>
+</div>
+
+<!-- ===== 홈 2페이지 ===== -->
+<section id="home2" class="topic">
+  <div class="sec-tag">
+    <span class="blob-num pink"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <h2>홈 2페이지</h2>
+  </div>
+  <p class="lead">홈을 <b>좌우로 스와이프</b>하면 두 번째 페이지가 나와요. 여기서 <b>포핏 플렉스(특별일정)</b>를 시작하고, 가계부에 단 메모를 모아보는 <b>최근 메모 카드</b>도 볼 수 있어요.</p>
+
+  <h3>특별일정 — 여행·행사 따로 묶기</h3>
+  <figure class="slim">
+    <img src="images/flex_start.png" alt="특별일정 시작 팝업. 일정 이름과 가계부 합산에서 제외 스위치, 시작 버튼" loading="lazy">
+    <figcaption>"특별일정 시작하기" → 시작하면 그 기간 기록이 자동으로 묶여요</figcaption>
+  </figure>
+  <figure>
+    <img src="images/flex_record.png" alt="특별일정 진행 중 기록 화면" loading="lazy">
+    <figcaption>진행 중 — 그 기간 기록이 한눈에 모여요</figcaption>
+  </figure>
+
+  <h3>최근 메모</h3>
+  <figure>
+    <img src="images/home_note_card.png" alt="홈 2페이지의 최근 메모 카드" loading="lazy">
+    <figcaption>가계부 항목에 단 메모가 여기 모여요 (탭하면 그날 일지로 점프)</figcaption>
+  </figure>
+
+  <a class="more" href="guide.html#home">전체 가이드에서 더 보기 →</a>
+</section>
+
+<!-- ===== 포핏 호출 ===== -->
+<section id="call" class="topic">
+  <div class="sec-tag">
+    <span class="blob-num"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 4 17l4 1-1-4a9 9 0 0 0-7-15z"/></svg></span>
+    <h2>포핏 호출</h2>
+  </div>
+  <p class="lead">알림으로 못 잡는 <b>현금 지출·메모·지난 기록 검색</b>은 포핏 호출로 해결해요. 홈 <b>오른쪽 아래 버튼</b>을 눌러 주세요.</p>
+
+  <figure>
+    <img src="images/call_button.png" alt="홈화면 오른쪽 아래 포핏 호출 버튼" loading="lazy">
+    <figcaption>홈 오른쪽 아래 — 포핏 호출 버튼</figcaption>
+  </figure>
+  <figure>
+    <img src="images/pawfit_call.png" alt="포핏 호출 창. 섹션 선택 버튼과 입력창" loading="lazy">
+    <figcaption>① 기록할 곳 선택 → ② 말하듯 입력</figcaption>
+  </figure>
+
+  <ol class="steps">
+    <li><strong>기록할 곳 선택</strong> — 가계부·주식·코인 중 어디에 적을지 골라요.</li>
+    <li><strong>말하듯 입력</strong> — 타이핑·음성·붙여넣기 모두 OK. 예) "삼성전자 30주 15만원에 샀어"</li>
+    <li><strong>검색도 여기서</strong> — "이번달 커피값 얼마 썼어?"처럼 물어보면 찾아줘요.</li>
+  </ol>
+  <div class="note"><strong>Contact Us</strong> — 건의·질문은 여기에 적어 보내면 개발자에게 바로 전달돼요. 가입도 메일 주소도 필요 없어요.</div>
+
+  <a class="more" href="guide.html#call">전체 가이드에서 더 보기 →</a>
+</section>
+
+</div>
+<script>
+(function(){
+  function show(){
+    var h=(location.hash||'').replace('#','');
+    var found=false;
+    var t=document.querySelectorAll('.topic');
+    for(var i=0;i<t.length;i++){var on=(t[i].id===h);if(on)found=true;t[i].classList.toggle('active',on);}
+    document.getElementById('index').classList.toggle('active',!found);
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
