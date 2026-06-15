@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포핏 (Pawfit) — 알림으로 자동 기록하는 가계부·매매일지</title>
+<meta name="description" content="포핏(Pawfit)은 폰 알림을 AI가 읽어 자동으로 기록하는 가계부·매매일지 앱입니다. 가입·인증 없음, 상품 광고 없음, 내 폰에만 저장.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF3E7;--cream-deep:#F8E8D4;--ink:#3A2E22;--ink-soft:#6B5B49;
+  --orange:#F59E3C;--orange-deep:#C77419;--pink:#F1789C;--teal:#2FA98B;--teal-deep:#0F6E56;--card:#FFFBF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%;}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+header{text-align:center;padding:56px 0 18px}
+.appicon{width:96px;height:96px;border-radius:24px;display:block;margin:0 auto 16px;box-shadow:0 14px 30px rgba(80,55,20,.18)}
+.paw{font-family:'Jua',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase}
+h1{font-family:'Jua',sans-serif;font-size:clamp(30px,8vw,42px);line-height:1.25;margin:8px 0 12px}
+.sub{color:var(--ink-soft);font-size:17px}
+.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
+.btn{font-family:'Jua',sans-serif;font-size:15px;text-decoration:none;border-radius:16px;padding:12px 20px;border:1.5px solid var(--cream-deep);color:var(--ink);background:var(--card)}
+.btn.primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+section{margin-bottom:56px}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.blob-num{font-family:'Jua',sans-serif;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;background:var(--orange);border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;flex-shrink:0}
+.blob-num.pink{background:var(--pink)}
+.blob-num.teal{background:var(--teal)}
+h2{font-family:'Jua',sans-serif;font-size:24px;line-height:1.35}
+h3{font-family:'Jua',sans-serif;font-size:18px;color:var(--orange-deep);margin:26px 0 8px}
+p{margin-bottom:14px}
+.lead{font-size:18px;background:var(--card);border-left:5px solid var(--orange);padding:16px 20px;border-radius:0 16px 16px 0;margin:18px 0 22px}
+.promise{display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1.5px solid var(--cream-deep);border-radius:18px;padding:16px 18px;margin-bottom:12px}
+.promise .ic{font-size:26px;line-height:1.2;flex-shrink:0}
+.promise .tt{font-family:'Jua',sans-serif;font-size:17px}
+.promise .ds{font-size:15px;color:var(--ink-soft)}
+.note{background:#FFF3DB;border:1.5px solid #F4D9A8;border-radius:16px;padding:14px 18px;font-size:15px;color:#7A5512;margin:18px 0}
+.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.dog{width:150px;display:block;margin:8px auto 0}
+footer{text-align:center;color:var(--ink-soft);font-size:14px;padding-top:24px;border-top:1.5px dashed var(--cream-deep)}
+footer a{color:var(--orange-deep);text-decoration:none;font-family:'Jua',sans-serif}
+footer .paw{display:block;margin-bottom:8px}
+.bizinfo{margin-top:16px;font-size:12.5px;color:var(--ink-soft);line-height:1.8}
+.bizinfo a{font-family:'Gowun Dodum',sans-serif;color:var(--orange-deep)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="appicon" src="images/icon.png" alt="포핏 앱 아이콘" onerror="this.style.display='none'">
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>포핏 <span style="font-size:.6em;color:var(--ink-soft)">Pawfit</span></h1>
+  <p class="sub">알림만 읽어서, 가계부도 매매일지도 자동으로 🐾</p>
+  <div class="btnrow">
+    <a class="btn primary" href="guide.html">사용 가이드</a>
+    <a class="btn" href="notice.html">공지사항</a>
+  </div>
+</header>
+
+<!-- 1. 포핏이 뭐예요 -->
+<section>
+  <div class="sec-tag"><span class="blob-num">1</span><h2>포핏이 뭐예요?</h2></div>
+  <p class="lead"><b>카드 사용·이체·송금</b> 같은 금융 알림과 <b>주식·선물 상품</b> 같은 투자 매매 알림을, <b>자동으로 일지에 기록</b>해주는 앱이에요.</p>
+  <p>수동으로 입력하거나 수정할 수도 있지만, 기본적으로는 <b>알림만으로</b> 그동안 귀찮고 복잡했던 <b>가계부와 매매일지</b>를 정리할 수 있는 앱입니다.</p>
+</section>
+
+<!-- 2. 왜 만들었나 -->
+<section>
+  <div class="sec-tag"><span class="blob-num pink">2</span><h2>왜 만들었냐면요</h2></div>
+  <p>은행 앱·오픈뱅킹·가계부 앱… 쓸 때마다 <b>회원가입</b>과 매번 귀찮은 <b>인증</b>, 반강제적인 <b>광고 사용 동의</b>, 그로 인한 <b>대출·보험 광고 노출</b> — 결국 <b>'장사용'으로 쓰이는 게 현실</b>이죠. "내 돈 정보를 다 들고 있구나" 하는 찜찜함이 싫었고, 화가 날 때도 많았어요. 그래서 <i>그런 게 없는 앱</i>을 직접 만들었습니다.</p>
+
+  <h3>매매일지는 왜요?</h3>
+  <p>저도 주식·파생상품에 투자하고 있고, <b>여러 증권사에 나눠서 거래</b>하는데 — 증권사마다 매매 기록 정리가 불편하게 돼 있고, 이걸 <b>한곳에 합쳐서 보는 건 훨씬 더 어려웠어요.</b> 특히 거래가 <b>빈번할수록</b> 기록을 찾아 정리하려다 포기하게 되더라고요. "이걸 한 곳에서 자동으로 정리해주면 좋겠다" 싶어서, 가계부와 함께 매매일지도 만들게 됐습니다.</p>
+</section>
+
+<!-- 3. 약속 -->
+<section>
+  <div class="sec-tag"><span class="blob-num teal">3</span><h2>포핏의 약속</h2></div>
+  <div class="promise"><span class="ic">🔓</span><div><div class="tt">가입·인증 없음</div><div class="ds">설치하면 바로 시작. 아이디·비밀번호도 없어요.</div></div></div>
+  <div class="promise"><span class="ic">🚫</span><div><div class="tt">상품 광고 폭탄 없음</div><div class="ds">대출·보험 같은 상품 권유로 괴롭히지 않아요.</div></div></div>
+  <div class="promise"><span class="ic">📱</span><div><div class="tt">내 폰에만 저장</div><div class="ds">계정도 서버도 없이, 기록은 내 기기 안에 쌓여요.</div></div></div>
+</section>
+
+<!-- 4. 소규모 + 건의 -->
+<section>
+  <div class="sec-tag"><span class="blob-num">4</span><h2>작게, 그러나 꾸준히</h2></div>
+  <p>소규모로 만들다 보니 부족한 점도 있지만, <b>더 나은 품질을 위해 계속 다듬고 있어요.</b></p>
+  <div class="note"><strong>건의·문의는 환영이에요!</strong> 앱 안의 <b>포핏 호출 → Contact Us</b>에 적어 보내주시면 개발자에게 바로 전달됩니다. 가입도, 메일 주소도 필요 없어요.</div>
+  <img class="dog" src="images/mascot_money.png" alt="선글라스 낀 포핏 강아지 마스코트" onerror="this.style.display='none'">
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a href="guide.html">사용 가이드</a> · <a href="notice.html">공지사항</a><br>
+  숫자 대신 그림으로 보는 내 돈의 흐름 🐾
+  <div class="bizinfo">
+    상호 포핏스 · 사업자등록번호 516-63-00820<br>
+    문의 <a href="mailto:pawfits79@gmail.com">pawfits79@gmail.com</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
