@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>포핏 사용 가이드 — 알림으로 기록하는 가계부</title>
-<meta name="description" content="포핏(Pawfit) 사용 가이드. 알림 기반 자동 기록, 매매 알림 설정 권장사항, 홈화면과 포핏 호출 사용법.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<title>포핏 사용 가이드 — 알림으로 기록하는 가계부·매매일지</title>
+<meta name="description" content="포핏(Pawfit) 사용 가이드. 알림 기반 자동 기록, 홈화면과 포핏 호출 사용법, 매매 알림 설정 권장.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
 :root{
   --cream:#FDF3E7;
   --cream-deep:#F8E8D4;
-  --ink:#3A2E22;
+  --ink:#2C2620;
   --ink-soft:#6B5B49;
   --orange:#F59E3C;
   --orange-deep:#C77419;
@@ -22,32 +22,36 @@
   --coral:#D85A30;
   --coral-deep:#993C1D;
   --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Gowun Dodum',sans-serif;
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
   background:var(--cream);
   color:var(--ink);
-  line-height:1.75;
+  line-height:1.8;
   font-size:17px;
   -webkit-text-size-adjust:100%;
 }
 .wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
-header{
-  text-align:center;
-  padding:64px 0 40px;
-  position:relative;
-}
+header{text-align:center;padding:56px 0 36px;position:relative}
 .paw{
-  font-family:'Jua',sans-serif;
-  font-size:15px;
-  letter-spacing:.2em;
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
   color:var(--orange-deep);
   text-transform:uppercase;
 }
 h1{
-  font-family:'Jua',sans-serif;
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
   font-size:clamp(30px,8vw,40px);
   line-height:1.3;
   margin:10px 0 14px;
@@ -58,9 +62,9 @@ h1{
   border:1.5px solid var(--cream-deep);
   border-radius:22px;
   padding:20px 24px;
-  margin-bottom:56px;
+  margin-bottom:36px;
 }
-.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc p{font-family:var(--head);font-weight:800;font-size:14px;color:var(--orange-deep);margin-bottom:8px}
 .toc a{
   display:block;
   color:var(--ink);
@@ -71,15 +75,11 @@ h1{
 }
 .toc a:last-child{border-bottom:none}
 .toc a:hover{color:var(--orange-deep)}
-section{margin-bottom:72px}
-.sec-tag{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
-}
+section{margin-bottom:64px}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px}
 .blob-num{
-  font-family:'Jua',sans-serif;
+  font-family:var(--head);
+  font-weight:800;
   width:44px;height:44px;
   display:flex;align-items:center;justify-content:center;
   font-size:20px;
@@ -91,54 +91,33 @@ section{margin-bottom:72px}
 .blob-num.pink{background:var(--pink)}
 .blob-num.teal{background:var(--teal)}
 .blob-num.coral{background:var(--coral)}
-h2{
-  font-family:'Jua',sans-serif;
-  font-size:24px;
-  line-height:1.35;
-}
-h3{
-  font-family:'Jua',sans-serif;
-  font-size:18px;
-  margin:30px 0 10px;
-  color:var(--orange-deep);
-}
+h2{font-family:var(--head);font-weight:800;letter-spacing:-.02em;font-size:23px;line-height:1.35}
+h3{font-family:var(--head);font-weight:800;font-size:18px;margin:30px 0 10px;color:var(--orange-deep)}
 p{margin-bottom:14px}
 .lead{
-  font-size:18px;
+  font-size:17.5px;
   background:var(--card);
   border-left:5px solid var(--orange);
   padding:16px 20px;
   border-radius:0 16px 16px 0;
   margin:18px 0 24px;
 }
-figure{margin:26px 0}
-figure.slim img{max-width:260px;margin:0 auto}
-figure img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:20px;
-  border:1.5px solid var(--cream-deep);
-}
-figcaption{
-  font-size:14px;
-  color:var(--ink-soft);
-  text-align:center;
-  margin-top:10px;
-  padding:0 8px;
-}
+figure{margin:24px 0}
+figure.slim img{max-width:280px;margin:0 auto}
+figure img{width:100%;height:auto;display:block;border-radius:20px;border:1.5px solid var(--cream-deep)}
+figcaption{font-size:14px;color:var(--ink-soft);text-align:center;margin-top:10px;padding:0 8px}
 .duo{display:flex;gap:14px}
 .duo figure{flex:1;margin:0}
-.duo-wrap{margin:26px 0}
+.duo-wrap{margin:24px 0}
 .duo-wrap figcaption{margin-top:12px}
 .svgbox{
   background:var(--card);
   border:1.5px solid var(--cream-deep);
   border-radius:20px;
   padding:18px 10px;
-  margin:26px 0;
+  margin:24px 0;
 }
-.svgbox svg{width:100%;height:auto;display:block}
+.svgbox svg{width:100%;height:auto;display:block;font-family:var(--body)}
 .note{
   background:#FFF3DB;
   border:1.5px solid #F4D9A8;
@@ -148,17 +127,14 @@ figcaption{
   color:#7A5512;
   margin:18px 0;
 }
-.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.note strong{font-family:var(--head);font-weight:800}
 .steps{list-style:none;margin:18px 0;counter-reset:step}
-.steps li{
-  position:relative;
-  padding:0 0 18px 52px;
-  counter-increment:step;
-}
+.steps li{position:relative;padding:0 0 18px 52px;counter-increment:step}
 .steps li::before{
   content:counter(step);
   position:absolute;left:0;top:0;
-  font-family:'Jua',sans-serif;
+  font-family:var(--head);
+  font-weight:800;
   width:36px;height:36px;
   display:flex;align-items:center;justify-content:center;
   background:var(--orange);
@@ -166,7 +142,7 @@ figcaption{
   border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
   font-size:17px;
 }
-.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps li strong{font-family:var(--head);font-weight:800}
 footer{
   text-align:center;
   color:var(--ink-soft);
@@ -177,7 +153,7 @@ footer{
 footer .paw{display:block;margin-bottom:6px}
 @media (max-width:420px){
   .duo{flex-direction:column}
-  body{font-size:16px}
+  body{font-size:16.5px}
 }
 </style>
 </head>
@@ -200,7 +176,7 @@ footer .paw{display:block;margin-bottom:6px}
   <a href="gps.html">내돈GPS — 가계부 가이드</a>
   <a href="diary.html">개미일기 — 매매일지 가이드</a>
   <a href="moon.html">To the moon — 코인일지 가이드</a>
-  <a href="play.html">포핏플레이 — AI 플레이그라운드 가이드</a>
+  <a href="play.html">포핏플레이 — 사용법 목차</a>
 </nav>
 
 <div class="note"><strong>💡 가이드 다시 보기</strong> 이 가이드는 <b>홈 왼쪽 아래에 흐르는 힌트 글자</b>(아래 사진)를 탭하면 언제든 다시 열어 볼 수 있어요.</div>
@@ -211,37 +187,34 @@ footer .paw{display:block;margin-bottom:6px}
 
 <!-- ===== 1. 알림 기반 기록 ===== -->
 <section id="how">
-  <div class="sec-tag">
-    <span class="blob-num">1</span>
-    <h2>포핏은 알림으로 기록해요</h2>
-  </div>
+  <div class="sec-tag"><span class="blob-num">1</span><h2>포핏은 알림으로 기록해요</h2></div>
 
-  <p class="lead">카드 결제, 주식 체결, 계좌 입출금… 폰에 뜨는 알림을 포핏이 읽고 AI가 해석해서 <b>자동으로 기록</b>합니다. 직접 입력할 필요가 없어요.</p>
+  <p class="lead">카드 결제, 주식 체결, 계좌 입출금… 폰에 뜨는 알림을 포핏이 읽고 <b>자동으로 기록</b>해요. 직접 입력할 필요가 없어요.</p>
 
-  <div class="svgbox" role="img" aria-label="알림 도착, 포핏 감지, AI 해석, 자동 기록의 네 단계 흐름도">
+  <div class="svgbox" role="img" aria-label="알림 도착, 포핏 감지, 포핏 해석, 자동 기록의 네 단계 흐름도">
     <svg viewBox="0 0 380 400" xmlns="http://www.w3.org/2000/svg">
       <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#C9B79C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
       <g>
         <rect x="70" y="20" width="240" height="56" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1"/>
-        <text x="190" y="42" text-anchor="middle" font-size="15" font-weight="bold" fill="#444441" font-family="'Jua',sans-serif">알림 도착</text>
+        <text x="190" y="42" text-anchor="middle" font-size="15" font-weight="bold" fill="#444441" font-family="'Wanted Sans Variable',sans-serif">알림 도착</text>
         <text x="190" y="62" text-anchor="middle" font-size="12.5" fill="#5F5E5A">증권사 · 카드사 · 은행 앱</text>
       </g>
       <line x1="190" y1="80" x2="190" y2="112" stroke="#C9B79C" stroke-width="2" marker-end="url(#arr2)"/>
       <g>
         <rect x="70" y="120" width="240" height="56" rx="14" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1"/>
-        <text x="190" y="142" text-anchor="middle" font-size="15" font-weight="bold" fill="#854F0B" font-family="'Jua',sans-serif">포핏이 감지</text>
+        <text x="190" y="142" text-anchor="middle" font-size="15" font-weight="bold" fill="#854F0B" font-family="'Wanted Sans Variable',sans-serif">포핏이 감지</text>
         <text x="190" y="162" text-anchor="middle" font-size="12.5" fill="#BA7517">화면에 뜬 알림을 읽어요</text>
       </g>
       <line x1="190" y1="180" x2="190" y2="212" stroke="#C9B79C" stroke-width="2" marker-end="url(#arr2)"/>
       <g>
         <rect x="70" y="220" width="240" height="56" rx="14" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1"/>
-        <text x="190" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#854F0B" font-family="'Jua',sans-serif">AI가 해석</text>
-        <text x="190" y="262" text-anchor="middle" font-size="12.5" fill="#BA7517">종목 · 수량 · 금액 · 시간 추출</text>
+        <text x="190" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#854F0B" font-family="'Wanted Sans Variable',sans-serif">포핏이 해석</text>
+        <text x="190" y="262" text-anchor="middle" font-size="12.5" fill="#BA7517">종목 · 수량 · 금액 · 시간 읽어내기</text>
       </g>
       <line x1="190" y1="280" x2="190" y2="312" stroke="#C9B79C" stroke-width="2" marker-end="url(#arr2)"/>
       <g>
         <rect x="70" y="320" width="240" height="56" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
-        <text x="190" y="342" text-anchor="middle" font-size="15" font-weight="bold" fill="#085041" font-family="'Jua',sans-serif">자동 기록 완료</text>
+        <text x="190" y="342" text-anchor="middle" font-size="15" font-weight="bold" fill="#085041" font-family="'Wanted Sans Variable',sans-serif">자동 기록 완료</text>
         <text x="190" y="362" text-anchor="middle" font-size="12.5" fill="#0F6E56">가계부 · 매매일지에 저장</text>
       </g>
     </svg>
@@ -249,77 +222,67 @@ footer .paw{display:block;margin-bottom:6px}
 
   <figure class="slim">
     <img src="images/processing.png" alt="포핏 홈화면에서 알림 8건 중 4건을 처리 중인 모습. 로딩 점들이 원을 그리며 돌아간다" loading="lazy">
-    <figcaption>알림이 쌓이면 포핏이 알아서 차례로 처리해요. (4 / 8건 처리중)</figcaption>
+    <figcaption>알림이 쌓이면 포핏이 알아서 차례로 처리해요 (4 / 8건 처리중)</figcaption>
   </figure>
 
-  <p><b>알림은 모아뒀다가, 앱을 열면 적기 시작해요.</b> 포핏은 평소에 도착한 알림을 차곡차곡 저장해 두고, 앱이 다시 켜질 때 일지 작성을 시작합니다. 몇 건 안 될 때는 금방 끝나지만, 알림이 많이 쌓이면 처리 시간도 그만큼 길어져요. 가끔씩 앱을 열어 포핏이 일할 시간을 주세요! 🐾</p>
+  <p><b>알림은 모아뒀다가, 앱을 열면 적기 시작해요.</b> 포핏은 도착한 알림을 차곡차곡 저장해 두고, 앱이 다시 켜질 때 일지를 씁니다. 몇 건 안 될 땐 금방 끝나지만, 많이 쌓이면 그만큼 시간이 걸려요. 가끔 앱을 열어 포핏이 일할 시간을 주세요! 🐾</p>
 
-  <div class="note"><strong>꼭!</strong> 첫 실행 시 이동하는 <b>알림 접근 권한</b>이 없으면 앱이 감지를 할 수 없습니다.<br>폰 설정에서 <b>배터리 제한</b>을 풀어주면 혹시 모를 알림 놓침을 방지할 수 있습니다.</div>
+  <div class="note"><strong>꼭!</strong> 첫 실행 때 켜는 <b>알림 접근 권한</b>이 없으면 포핏이 알림을 볼 수 없어요.<br>폰 설정에서 <b>배터리 제한</b>을 풀어주면 혹시 모를 알림 놓침도 막을 수 있어요.</div>
 
   <h3>카카오톡으로 알림을 받는다면 (중요!)</h3>
   <p>증권사·카드사 알림을 카카오톡으로 받고 있다면, 설정 두 가지만 챙겨 주세요.</p>
   <ol class="steps">
-    <li><strong>카톡 알림 표시를 "이름+메시지"로</strong> — 카카오톡 앱의 설정 → 알림 → 알림 표시에서 <b>이름+메시지(제목+내용)</b>를 선택해 주세요. 내용 없이 "새 메시지가 도착했습니다"만 뜨면 포핏도 읽을 내용이 없어요.</li>
-    <li><strong>알림이 시끄러우면 "무음"으로</strong> — 폰 설정 → 애플리케이션 → 카카오톡 → 알림에서 소리만 꺼 주세요(무음/소리 없음). 알림이 조용히 떠도 포핏은 똑같이 읽습니다.</li>
+    <li><strong>카톡 알림 표시를 "이름+메시지"로</strong> — 카카오톡 설정 → 알림 → 알림 표시에서 <b>이름+메시지(제목+내용)</b>를 골라주세요. 내용 없이 "새 메시지가 도착했습니다"만 뜨면 포핏도 읽을 게 없어요.</li>
+    <li><strong>알림이 시끄러우면 "무음"으로</strong> — 폰 설정 → 애플리케이션 → 카카오톡 → 알림에서 소리만 꺼주세요(무음). 조용히 떠도 포핏은 똑같이 읽어요.</li>
   </ol>
-  <div class="note"><strong>⚠️ 알림을 아예 끄면(차단) 안 돼요.</strong> 알림 자체가 사라지면 포핏도 읽을 수 없어 기록이 멈춥니다. <b>무음까지만!</b></div>
+  <div class="note"><strong>⚠️ 알림을 아예 끄면(차단) 안 돼요.</strong> 알림 자체가 사라지면 포핏도 읽을 수 없어 기록이 멈춰요. <b>무음까지만!</b></div>
 </section>
 
 <!-- ===== 2. 홈화면 ===== -->
 <section id="home">
-  <div class="sec-tag">
-    <span class="blob-num pink">2</span>
-    <h2>홈화면 둘러보기</h2>
-  </div>
+  <div class="sec-tag"><span class="blob-num pink">2</span><h2>홈화면 둘러보기</h2></div>
 
   <p>홈에는 네 개의 방이 있어요 — <b>내돈GPS</b>(가계부), <b>개미일기</b>(매매일지), <b>포핏플레이</b>, <b>To the moon</b>(코인일지).</p>
 
-  <p><b>왼쪽 위 구슬</b>이 모드 토글 스위치예요. 한 번 누르면 <b>일지모드 ↔ 비주얼모드</b>가 전환됩니다.</p>
+  <p><b>왼쪽 위 구슬</b>이 모드 토글이에요. 한 번 누르면 <b>일지 모드 ↔ 시각화 모드</b>가 바뀌어요.</p>
 
   <div class="duo-wrap">
     <div class="duo">
-      <figure>
-        <img src="images/home_diary.png" alt="일지모드 홈화면. 왼쪽 위 구슬 토글이 주황 테두리로 강조되어 있다" loading="lazy">
-      </figure>
-      <figure>
-        <img src="images/home_visual.png" alt="비주얼모드 홈화면. 네 개의 방이 색색의 구슬로 바뀌어 있다" loading="lazy">
-      </figure>
+      <figure><img src="images/home_diary.png" alt="일지 모드 홈화면. 왼쪽 위 구슬 토글이 주황 테두리로 강조되어 있다" loading="lazy"></figure>
+      <figure><img src="images/home_visual.png" alt="시각화 모드 홈화면. 네 개의 방이 색색의 구슬로 바뀌어 있다" loading="lazy"></figure>
     </div>
-    <figcaption>구슬 토글을 누르면 일지모드 ↔ 비주얼모드로 전환!</figcaption>
+    <figcaption>구슬을 누르면 일지 모드 ↔ 시각화 모드로!</figcaption>
   </div>
 
   <h3>포핏 체력바 — 하루치 일할 힘</h3>
-  <p>모드 토글 옆, 흐르는 글자와 겹쳐 보이는 가는 게이지가 <b>포핏 체력바</b>예요. 포핏이 하루 동안 일할 수 있는 체력이라, 알림을 처리할 때마다 조금씩 줄어듭니다. 체력은 <b>매일 새로 채워져요</b>.</p>
-  <p>체력을 다 쓰면 그날의 알림은 잠시 쌓아뒀다가 <b>밤 10시 이후에 한 번에 몰아서</b> 처리해요. 기록이 사라지는 게 아니니 안심하세요.</p>
-  <div class="note"><strong>게이지 끝의 15/15는?</strong> 포핏에게 <b>분석을 요청할 수 있는 횟수</b>예요. 포핏의 시선, 예상노트 같은 분석 기능을 쓸 때 하나씩 줄어듭니다.</div>
+  <p>모드 토글 옆, 흐르는 글자와 겹쳐 보이는 가는 게이지가 <b>포핏 체력바</b>예요. 포핏이 <b>하루 동안 일할 수 있는 힘</b>이라, 알림을 처리할 때마다 조금씩 줄고 <b>매일 새로 채워져요.</b></p>
+  <p>체력을 다 쓰면 그날 남은 알림은 잠시 쌓아뒀다가 <b>밤 늦게 몰아서</b> 처리해요. 기록이 사라지는 게 아니니 안심하세요.</p>
+  <div class="note"><strong>포핏도 능력치 한계가 있어요.</strong> 포핏은 <b>하루·한 달에 쓸 수 있는 능력치</b>가 정해져 있어요. 평소엔 넉넉하지만, 한꺼번에 아주 많은 걸 부탁하면 나눠서 처리하기도 해요.</div>
 
   <h3>홈 2페이지 — 옆으로 넘기면</h3>
   <p>홈을 <b>좌우로 스와이프</b>하면 두 번째 페이지가 나와요. 여기서 <b>포핏 플렉스(특별일정)</b>를 시작하고, 가계부에 단 메모를 모아보는 <b>최근 메모 카드</b>도 볼 수 있어요.</p>
 
   <figure class="slim">
     <img src="images/flex_start.png" alt="특별일정 시작 팝업. 일정 이름 입력칸, 가계부 합산에서 제외 스위치, 시작 버튼" loading="lazy">
-    <figcaption>"특별일정 시작하기" → 이름 입력 후 시작 (가계부 합산에서 빼려면 스위치 ON)</figcaption>
+    <figcaption>"특별일정 시작하기" → 이름 적고 시작 (가계부 합산에서 빼려면 스위치 ON)</figcaption>
   </figure>
 
-  <p>시작하면 <b>끝낼 때까지 들어오는 기록이 이 일정으로 자동으로 묶여요.</b> 진행 중엔 홈 2페이지가 기록 화면으로 바뀌어, 그 기간에 들어온 기록이 한눈에 보입니다.</p>
+  <p>시작하면 <b>끝낼 때까지 들어오는 기록이 이 일정으로 자동으로 묶여요.</b> 진행 중엔 홈 2페이지가 기록 화면으로 바뀌어, 그 기간 기록이 한눈에 보여요.</p>
   <figure>
-    <img src="images/flex_record.png" alt="특별일정 진행 중 기록 화면. 녹화중 골프여행 표시와 누적 금액, 그날 들어온 기록 카드들" loading="lazy">
+    <img src="images/flex_record.png" alt="특별일정 진행 중 기록 화면. 녹화중 표시와 누적 금액, 그날 들어온 기록 카드들" loading="lazy">
     <figcaption>진행 중 — "녹화중" 표시와 함께 그 기간 기록이 모여요</figcaption>
   </figure>
 
-  <div class="note"><strong>특별일정(포핏 플렉스)이 뭐예요?</strong> 여행·행사처럼 특정 기간의 지출을 따로 묶어 보는 기능이에요. <b>끝난 일정 모아보기·정리</b>는 <a href="play.html#flex" style="color:var(--orange-deep)">포핏플레이 가이드</a>에서 자세히 다뤄요.</div>
+  <div class="note"><strong>특별일정(포핏 플렉스)이 뭐예요?</strong> 여행·행사처럼 특정 기간의 지출을 따로 묶어 보는 기능이에요. <b>끝난 일정 모아보기·정리</b>는 <a href="flex.html" style="color:var(--orange-deep)">포핏 플렉스 가이드</a>에서 자세히 다뤄요.</div>
 
-  <p>2페이지엔 <b>최근 메모 카드</b>도 있어요 — 가계부 항목에 단 메모가 여기 모입니다. 메모 다는 법은 <a href="gps.html#note" style="color:var(--orange-deep)">내돈GPS 가이드</a>를 참고하세요.</p>
+  <p>2페이지엔 <b>최근 메모 카드</b>도 있어요 — 가계부 항목에 단 메모가 여기 모여요. 메모 다는 법은 <a href="gps.html#note" style="color:var(--orange-deep)">내돈GPS 가이드</a>를 참고하세요.</p>
 </section>
 
 <!-- ===== 3. 포핏 호출 ===== -->
 <section id="call">
-  <div class="sec-tag">
-    <span class="blob-num teal">3</span>
-    <h2>포핏 호출 — 말하듯 기록·검색</h2>
-  </div>
+  <div class="sec-tag"><span class="blob-num teal">3</span><h2>포핏 호출 — 말하듯 기록·검색</h2></div>
 
-  <p>알림으로 못 잡는 현금 지출이나 메모, 지난 기록 검색은 <b>포핏 호출</b>로 해결해요. 홈 오른쪽 아래 버튼을 눌러 주세요.</p>
+  <p>알림으로 못 잡는 <b>현금 지출·메모</b>나, 지난 기록 <b>검색</b>은 <b>포핏 호출</b>로 해결해요. 홈 오른쪽 아래 버튼을 눌러주세요.</p>
 
   <figure>
     <img src="images/call_button.png" alt="홈화면 오른쪽 아래의 포핏 호출 버튼이 강조되어 있다" loading="lazy">
@@ -327,37 +290,34 @@ footer .paw{display:block;margin-bottom:6px}
   </figure>
 
   <figure>
-    <img src="images/pawfit_call.png" alt="포핏 호출 창. 1번 배지가 가계부, 주식, 검색, 코인 섹션 버튼을, 2번 배지가 하단 입력창을 가리킨다" loading="lazy">
-    <figcaption>포핏 호출 창 — ① 섹션 선택 → ② 말하듯 입력</figcaption>
+    <img src="images/pawfit_call.png" alt="포핏 호출 창. 1번 배지가 가계부·주식·검색·코인 섹션 버튼을, 2번 배지가 하단 입력창을 가리킨다" loading="lazy">
+    <figcaption>포핏 호출 창 — ① 어디에 적을지 고르고 → ② 말하듯 입력</figcaption>
   </figure>
 
   <ol class="steps">
     <li><strong>기록할 곳을 선택</strong> — 가계부 · 주식 · 코인 중 어디에 적을지 골라요.</li>
-    <li><strong>말하듯 입력</strong> — 타이핑, 음성, 복사·붙여넣기 모두 가능해요. <br>예) "삼성전자 30주 15만원에 샀어" → 선택한 일지에 바로 기록!</li>
-    <li><strong>보유 종목도 여기서</strong> — 기존에 보유한 종목이 있다면 여기서 저장해 놓으세요. 일지에서 바로 보실 수 있어요.</li>
+    <li><strong>말하듯 입력</strong> — 타이핑, 음성, 복사·붙여넣기 다 돼요. <br>예) "삼성전자 30주 15만원에 샀어" → 고른 일지에 바로 기록!</li>
+    <li><strong>보유 종목도 여기서</strong> — 이미 가진 종목이 있으면 여기서 저장해 두세요. 일지에서 바로 보여요.</li>
   </ol>
 
   <h3>검색 — 물어보면 찾아줘요</h3>
-  <p>검색하고 싶은 게 있으면 <b>포핏에게 대화하듯이</b> 입력해 주시면 됩니다. 예) "이번달 커피값 얼마나 썼어?"<br>한 건 찾기든, 기간별 합계든, 항목을 묶어 보는 것이든 포핏이 알아듣고 찾아옵니다.</p>
+  <p>궁금한 게 있으면 <b>포핏에게 말하듯</b> 물어보세요. 예) "이번 달 커피값 얼마나 썼어?"<br>한 건 찾기든, 기간 합계든, 항목을 묶어 보는 것이든 알아듣고 찾아와요.</p>
 
   <h3>Contact Us — 개발자에게 바로</h3>
-  <p>건의나 질문이 있으면 <b>Contact Us</b>에 편하게 적어 보내 주세요. 개발자에게 메시지가 바로 전달돼요. 가입도, 메일 주소도 필요 없어요.</p>
+  <p>건의나 질문이 있으면 <b>Contact Us</b>에 편하게 적어 보내주세요. 개발자에게 바로 전달돼요. 가입도, 메일 주소도 필요 없어요.</p>
 </section>
 
 <!-- ===== 4. 매매 알림 형식 ===== -->
 <section id="trade">
-  <div class="sec-tag">
-    <span class="blob-num coral">4</span>
-    <h2>매매 알림은 "자세한 형식"으로</h2>
-  </div>
+  <div class="sec-tag"><span class="blob-num coral">4</span><h2>매매 알림은 "자세한 형식"으로</h2></div>
 
-  <p>주식·코인 <b>매매 기록의 정확도는 알림에 담긴 정보량</b>이 좌우해요. 종목·수량·단가가 또렷한 알림일수록 정확하게 기록됩니다.</p>
+  <p>주식·코인 <b>매매 기록의 정확도는 알림에 담긴 정보량</b>이 좌우해요. 종목·수량·단가가 또렷한 알림일수록 정확하게 기록돼요.</p>
 
   <div class="svgbox" role="img" aria-label="자세한 체결 알림과 짧은 체결 알림의 비교">
     <svg viewBox="0 0 380 336" xmlns="http://www.w3.org/2000/svg">
       <g>
         <rect x="20" y="16" width="340" height="142" rx="16" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
-        <text x="44" y="46" font-size="15" font-weight="bold" fill="#085041" font-family="'Jua',sans-serif">자세한 체결 알림 — 권장 ✓</text>
+        <text x="44" y="46" font-size="15" font-weight="bold" fill="#085041" font-family="'Wanted Sans Variable',sans-serif">자세한 체결 알림 — 권장 ✓</text>
         <text x="44" y="74" font-size="12.5" fill="#0F6E56" font-family="monospace">[OO증권 체결통보] ABCD 매수</text>
         <text x="44" y="94" font-size="12.5" fill="#0F6E56" font-family="monospace">주문수량 1 · 체결수량 1 · 주문번호 1390</text>
         <text x="44" y="114" font-size="12.5" fill="#0F6E56" font-family="monospace">체결단가 123.45 · 체결금액 123,450원</text>
@@ -365,7 +325,7 @@ footer .paw{display:block;margin-bottom:6px}
       </g>
       <g>
         <rect x="20" y="182" width="340" height="124" rx="16" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-        <text x="44" y="212" font-size="15" font-weight="bold" fill="#712B13" font-family="'Jua',sans-serif">짧은 체결 알림 — 주의 !</text>
+        <text x="44" y="212" font-size="15" font-weight="bold" fill="#712B13" font-family="'Wanted Sans Variable',sans-serif">짧은 체결 알림 — 주의 !</text>
         <text x="44" y="240" font-size="12.5" fill="#993C1D" font-family="monospace">"매수 주문이 체결되었습니다."</text>
         <text x="44" y="262" font-size="12.5" fill="#993C1D">수량 · 단가 · 시간 · 주문번호가 없어요</text>
         <text x="44" y="284" font-size="12.5" fill="#712B13">부분체결 · 잦은 매매에서 누락될 수 있어요</text>
@@ -373,14 +333,14 @@ footer .paw{display:block;margin-bottom:6px}
     </svg>
   </div>
 
-  <div class="note"><strong>카드 결제는 괜찮아요.</strong> 카드사 알림은 짧아도 가맹점·금액이 잘 담겨 있어 그대로 기록됩니다. 이 권장은 <b>주식·코인 매매에만</b> 해당해요.</div>
+  <div class="note"><strong>카드 결제는 괜찮아요.</strong> 카드사 알림은 짧아도 가맹점·금액이 잘 담겨 있어 그대로 기록돼요. 이 권장은 <b>주식·코인 매매에만</b> 해당해요.</div>
 
   <h3>증권사 앱에서 설정하기</h3>
-  <p>증권사 앱의 <b>알리미(알림) 신청</b> 메뉴에서 체결통보 수신 방법을 <b>카카오톡</b>처럼 항목이 자세히 오는 채널로 선택해 주세요. 짧은 푸시만 오는 경우보다 기록이 훨씬 정확해져요.</p>
+  <p>증권사 앱의 <b>알리미(알림) 신청</b>에서 체결통보 받는 방법을 <b>카카오톡</b>처럼 항목이 자세히 오는 채널로 골라주세요. 짧은 푸시만 올 때보다 기록이 훨씬 정확해져요.</p>
 
   <figure>
-    <img src="images/alimi_setting.png" alt="증권사 앱 알리미 신청 화면. 환전, 배당, 체결통보 항목에서 카카오톡 수신이 선택되어 있다" loading="lazy">
-    <figcaption>예시: 증권사 앱 알리미 신청 화면 — 체결통보를 카카오톡 수신으로 설정</figcaption>
+    <img src="images/alimi_setting.png" alt="증권사 앱 알리미 신청 화면. 환전·배당·체결통보 항목에서 카카오톡 수신이 선택되어 있다" loading="lazy">
+    <figcaption>예시: 증권사 알리미 신청 — 체결통보를 카카오톡 수신으로</figcaption>
   </figure>
 </section>
 

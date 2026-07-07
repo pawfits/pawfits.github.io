@@ -5,29 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>포핏 (Pawfit) — 공지사항</title>
 <meta name="description" content="포핏(Pawfit) 공지사항 및 업데이트 소식.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
 :root{--cream:#FDF3E7;--cream-deep:#F8E8D4;--ink:#3A2E22;--ink-soft:#6B5B49;--orange:#F59E3C;--orange-deep:#C77419;--card:#FFFBF4}
 *{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
 html{scroll-behavior:smooth}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%}
+body{font-family:'Pretendard Variable','Pretendard',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%}
 .wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
-.back{display:inline-block;margin-top:28px;font-size:15px;color:var(--orange-deep);text-decoration:none;font-family:'Jua',sans-serif}
+.back{display:inline-block;margin-top:28px;font-size:15px;color:var(--orange-deep);text-decoration:none;font-family:'Wanted Sans Variable',sans-serif}
 header{text-align:center;padding:24px 0 36px}
-.paw{font-family:'Jua',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase}
-h1{font-family:'Jua',sans-serif;font-size:clamp(28px,7vw,38px);line-height:1.25;margin:8px 0 12px}
+.paw{font-family:'Wanted Sans Variable',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase}
+h1{font-family:'Wanted Sans Variable',sans-serif;font-size:clamp(28px,7vw,38px);line-height:1.25;margin:8px 0 12px}
 .sub{color:var(--ink-soft);font-size:16px}
 .post{background:var(--card);border:1.5px solid var(--cream-deep);border-radius:18px;padding:18px 20px;margin-bottom:16px}
-.post .date{font-family:'Jua',sans-serif;font-size:13px;color:var(--orange-deep)}
-.post h2{font-family:'Jua',sans-serif;font-size:19px;margin:4px 0 8px}
+.post .date{font-family:'Wanted Sans Variable',sans-serif;font-size:13px;color:var(--orange-deep)}
+.post h2{font-family:'Wanted Sans Variable',sans-serif;font-size:19px;margin:4px 0 8px}
 .post p{font-size:15.5px;color:var(--ink);margin:0}
 .note{background:#FFF3DB;border:1.5px solid #F4D9A8;border-radius:16px;padding:14px 18px;font-size:15px;color:#7A5512;margin:22px 0}
-.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.note strong{font-family:'Wanted Sans Variable',sans-serif;font-weight:400}
 footer{text-align:center;color:var(--ink-soft);font-size:14px;padding-top:24px;border-top:1.5px dashed var(--cream-deep)}
-footer a{color:var(--orange-deep);text-decoration:none;font-family:'Jua',sans-serif}
+footer a{color:var(--orange-deep);text-decoration:none;font-family:'Wanted Sans Variable',sans-serif}
 footer .paw{display:block;margin-bottom:8px}
+body{font-weight:450;letter-spacing:-.01em;line-height:1.8}
+h1,h2,h3,.paw,.back,.toc p,.blob-num,.btn,.promise .tt,.post .date,.post h2,.note strong,.steps li::before,.steps li strong,footer a{font-weight:800}
+.post ul.feat{list-style:none;margin:10px 0 0;padding:0}
+.post ul.feat li{font-size:15px;color:var(--ink);padding:8px 2px;border-top:1px dashed var(--cream-deep);line-height:1.6}
 </style>
 </head>
 <body>
@@ -41,7 +46,26 @@ footer .paw{display:block;margin-bottom:8px}
   <p class="sub">포핏의 새 소식과 업데이트를 여기에 올려요</p>
 </header>
 
-<!-- ※ 최신 공지를 맨 위에 추가하세요. 아래는 초안 — 실제 출시된 항목·날짜만 남기고 수정하세요. -->
+<!-- ※ 최신 공지를 맨 위에 추가하세요. 1.0.6 날짜(2026.7.)는 실제 출시일에 맞춰 수정하세요. -->
+
+<div class="post">
+  <div class="date">2026. 7.</div>
+  <h2>✨ 포핏플레이가 확 커졌어요 (1.0.6)</h2>
+  <p>포핏과 놀 거리가 잔뜩 늘었어요 — 그리고, 뽑고, 되짚어보세요! 자세한 사용법은 <a href="play.html" style="color:var(--orange-deep)">포핏플레이 가이드</a>에서 볼 수 있어요.</p>
+  <ul class="feat">
+    <li><b>✏️ 포핏의 희망회로</b> — 차트에 내 예상을 그리면 포핏이 응원 한마디</li>
+    <li><b>🔮 내가 만약에..</b> — 그때 샀거나 참았더라면, 지금 어땠을까?</li>
+    <li><b>🎬 내실력 봤어??</b> — 내 매매를 종목별로 필름처럼 되짚어보기</li>
+    <li><b>🌙 Night Watch</b> — 관심종목을 포핏 감시단에게 맡기기</li>
+    <li><b>🔍 포핏의 랜덤 리서치</b> — 매일 랜덤으로 뽑는 오늘의 종목 카드</li>
+  </ul>
+</div>
+
+<div class="post">
+  <div class="date">2026. 7.</div>
+  <h2>🛠️ 더 안정적으로, 더 조용하게 (1.0.6)</h2>
+  <p>밀린 알림도 빠짐없이 처리되도록 <b>알림 자동 기록</b>을 다듬고, 매매 <b>부분체결</b> 기록 오류도 고쳤어요. 앱이 띄우는 안내 메시지는 <b>화면 가운데 부드러운 알약 토스트</b>로 바뀌어 덜 번잡해요. 그 밖에 자잘한 버그와 튕김도 손봤어요. <span style="color:var(--ink-soft);font-size:13.5px">(부분체결 수정은 카카오톡·SMS 알림 대상이며, 앱 푸시 알림은 부분체결이 표시되지 않아 적용되지 않을 수 있어요.)</span></p>
+</div>
 
 <div class="post">
   <div class="date">2026. 6. 14</div>
@@ -53,12 +77,6 @@ footer .paw{display:block;margin-bottom:8px}
   <div class="date">2026. 6.</div>
   <h2>사용 가이드 전면 개편 📖</h2>
   <p>그동안 <b>불친절했던 화면들을 다듬고</b>, 메뉴별로 따라 하기 쉬운 <b>제대로 된 상세 가이드</b>를 새로 만들었어요. 막히는 부분은 앱 안내나 사용 가이드에서 바로 확인할 수 있어요.</p>
-</div>
-
-<div class="post">
-  <div class="date">2026. 6.</div>
-  <h2>더 안정적으로 — 알림 자동 기록 개선 🛠️</h2>
-  <p>밀린 알림을 처리하는 방식을 개선해, 알림이 많이 쌓여도 빠짐없이 안정적으로 기록되도록 다듬었어요. 매매 <b>부분체결</b> 기록 오류도 수정했어요. <span style="color:var(--ink-soft);font-size:13.5px">(카카오톡·SMS 알림 대상이며, 앱 푸시 알림은 부분체결이 표시되지 않아 적용되지 않을 수 있어요.)</span></p>
 </div>
 
 <div class="post">

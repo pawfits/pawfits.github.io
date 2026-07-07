@@ -3,33 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>포핏플레이 가이드 — 포핏 AI 플레이그라운드</title>
-<meta name="description" content="포핏(Pawfit) 포핏플레이 사용 가이드. 예상노트 AI 차트 검증, 포핏 플렉스 특별일정 모아보기.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<title>포핏플레이 사용법 — 포핏과 노는 곳</title>
+<meta name="description" content="포핏(Pawfit) 포핏플레이 사용 가이드 목차. 포핏 플렉스, 희망회로, 내가 만약에, 내실력 봤어, Night Watch, 랜덤 리서치.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
 :root{
   --cream:#FDF3E7;
   --cream-deep:#F8E8D4;
-  --ink:#3A2E22;
+  --ink:#2C2620;
   --ink-soft:#6B5B49;
   --orange:#F59E3C;
   --orange-deep:#C77419;
-  --pink:#F1789C;
-  --teal:#2FA98B;
-  --teal-deep:#0F6E56;
-  --coral:#D85A30;
-  --coral-deep:#993C1D;
   --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Gowun Dodum',sans-serif;
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
   background:var(--cream);
   color:var(--ink);
-  line-height:1.75;
+  line-height:1.8;
   font-size:17px;
   -webkit-text-size-adjust:100%;
 }
@@ -38,153 +38,69 @@ body{
   display:inline-block;
   margin-top:28px;
   font-size:15px;
+  font-weight:700;
   color:var(--orange-deep);
   text-decoration:none;
-  font-family:'Jua',sans-serif;
+  font-family:var(--head);
 }
-header{
-  text-align:center;
-  padding:28px 0 40px;
-}
+header{text-align:center;padding:26px 0 20px}
 .paw{
-  font-family:'Jua',sans-serif;
-  font-size:15px;
-  letter-spacing:.2em;
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
   color:var(--orange-deep);
   text-transform:uppercase;
 }
 h1{
-  font-family:'Jua',sans-serif;
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
   font-size:clamp(30px,8vw,40px);
   line-height:1.3;
-  margin:10px 0 14px;
+  margin:10px 0 12px;
 }
 .sub{color:var(--ink-soft);font-size:16px}
-.toc{
-  background:var(--card);
-  border:1.5px solid var(--cream-deep);
-  border-radius:22px;
-  padding:20px 24px;
-  margin-bottom:56px;
-}
-.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
-.toc a{
-  display:block;
-  color:var(--ink);
-  text-decoration:none;
-  padding:6px 0;
-  font-size:16px;
-  border-bottom:1px dashed var(--cream-deep);
-}
-.toc a:last-child{border-bottom:none}
-.toc a:hover{color:var(--orange-deep)}
-section{margin-bottom:72px}
-.sec-tag{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
-}
-.blob-num{
-  font-family:'Jua',sans-serif;
-  width:44px;height:44px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;
-  color:#fff;
-  background:var(--orange);
-  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
-  flex-shrink:0;
-}
-.blob-num.pink{background:var(--pink)}
-.blob-num.teal{background:var(--teal)}
-h2{
-  font-family:'Jua',sans-serif;
-  font-size:24px;
-  line-height:1.35;
-}
-h3{
-  font-family:'Jua',sans-serif;
-  font-size:18px;
-  margin:34px 0 10px;
-  color:var(--orange-deep);
-}
-p{margin-bottom:14px}
-.lead{
-  font-size:18px;
-  background:var(--card);
-  border-left:5px solid var(--orange);
-  padding:16px 20px;
-  border-radius:0 16px 16px 0;
-  margin:18px 0 24px;
-}
-figure{margin:22px 0}
-figure img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:18px;
-  border:1.5px solid var(--cream-deep);
-}
-figure.slim img{max-width:280px;margin:0 auto}
-figure.mid img{max-width:380px;margin:0 auto}
-figcaption{
-  font-size:14px;
+.intro{text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:34px}
+.grouphead{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--head);font-weight:800;
+  font-size:12.5px;letter-spacing:.12em;
   color:var(--ink-soft);
-  text-align:center;
-  margin-top:10px;
-  padding:0 8px;
+  margin:30px 0 14px;
 }
-.duo{display:flex;gap:14px;align-items:flex-start}
-.duo figure{flex:1;margin:0}
-.duo-wrap{margin:22px 0}
-.duo-wrap figcaption{margin-top:12px}
-.svgbox{
-  background:var(--card);
-  border:1.5px solid var(--cream-deep);
+.grouphead::before,.grouphead::after{content:"";flex:1;height:1px;background:var(--cream-deep)}
+.menu{
+  display:flex;align-items:center;gap:15px;
+  text-decoration:none;
   border-radius:20px;
-  padding:18px 10px;
-  margin:24px 0;
+  padding:16px 18px;
+  margin-bottom:13px;
+  background:var(--c);
+  box-shadow:0 8px 20px rgba(60,40,15,.16);
 }
-.svgbox svg{width:100%;height:auto;display:block}
-.note{
-  background:#FFF3DB;
-  border:1.5px solid #F4D9A8;
-  border-radius:16px;
-  padding:14px 18px;
-  font-size:15px;
-  color:#7A5512;
-  margin:18px 0;
-}
-.note strong{font-family:'Jua',sans-serif;font-weight:400}
-.steps{list-style:none;margin:18px 0;counter-reset:step}
-.steps li{
-  position:relative;
-  padding:0 0 18px 52px;
-  counter-increment:step;
-}
-.steps li::before{
-  content:counter(step);
-  position:absolute;left:0;top:0;
-  font-family:'Jua',sans-serif;
-  width:36px;height:36px;
+.menu.grad{background:linear-gradient(135deg,#EE852A,#FAC775)}
+.menu .ic{
+  width:50px;height:50px;border-radius:50%;
+  background:rgba(255,255,255,.16);
   display:flex;align-items:center;justify-content:center;
-  background:var(--orange);
-  color:#fff;
-  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
-  font-size:17px;
+  font-size:24px;flex-shrink:0;
 }
-.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+.menu .tx{flex:1;min-width:0}
+.menu .tt{font-family:var(--head);font-weight:800;font-size:18px;color:#fff;letter-spacing:-.02em}
+.menu .ds{font-size:12.5px;color:rgba(255,255,255,.82);margin-top:2px}
+.menu .ar{color:rgba(255,255,255,.65);font-size:17px;flex-shrink:0}
 footer{
   text-align:center;
   color:var(--ink-soft);
   font-size:14px;
-  padding-top:24px;
+  padding-top:30px;
+  margin-top:20px;
   border-top:1.5px dashed var(--cream-deep);
 }
 footer .paw{display:block;margin-bottom:6px}
 @media (max-width:420px){
-  .duo{flex-direction:column}
-  body{font-size:16px}
+  body{font-size:16.5px}
 }
 </style>
 </head>
@@ -196,94 +112,50 @@ footer .paw{display:block;margin-bottom:6px}
 
 <header>
   <span class="paw">Pawfit! 포핏!!</span>
-  <h1>포핏플레이<br>AI 플레이그라운드</h1>
-  <p class="sub">그림 그리고, 특별일정 모아보고 — 포핏과 노는 곳 🐾</p>
+  <h1>포핏플레이</h1>
+  <p class="sub">그리고, 뽑고, 되짚고 — 포핏과 노는 곳 🐾</p>
 </header>
 
-<nav class="toc">
-  <p>차례</p>
-  <a href="#note">1. 예상노트 — 그리면 포핏이 봐줘요</a>
-  <a href="#flex">2. 포핏 플렉스 — 특별일정 모아보기</a>
-</nav>
+<p class="intro">궁금한 메뉴를 눌러 사용법을 보세요.</p>
 
-<figure class="mid">
-  <img src="images/play_menu.png" alt="포핏플레이 메뉴. 예상노트와 Dr.포핏 두 가지가 있다" loading="lazy">
-  <figcaption>포핏플레이엔 두 가지 — 예상노트와 포핏 플렉스</figcaption>
-</figure>
+<!-- ── 특별일정 관리 ── -->
+<div class="grouphead">특별일정 관리</div>
+<a class="menu" href="flex.html" style="--c:#F9A825">
+  <span class="ic">🧳</span>
+  <span class="tx"><span class="tt">포핏 플렉스</span><span class="ds">여행·행사 특별일정 모아보기</span></span>
+  <span class="ar">›</span>
+</a>
 
-<!-- ===== 1. 예상노트 ===== -->
-<section id="note">
-  <div class="sec-tag">
-    <span class="blob-num">1</span>
-    <h2>예상노트 — 그리면 포핏이 봐줘요</h2>
-  </div>
+<!-- ── 포핏플레이! ── -->
+<div class="grouphead">포핏플레이!</div>
+<a class="menu" href="hope.html" style="--c:#4A148C">
+  <span class="ic">✏️</span>
+  <span class="tx"><span class="tt">포핏의 희망회로</span><span class="ds">차트에 내 예상을 그려보기</span></span>
+  <span class="ar">›</span>
+</a>
+<a class="menu" href="whatif.html" style="--c:#AD1457">
+  <span class="ic">🔮</span>
+  <span class="tx"><span class="tt">내가 만약에..</span><span class="ds">그때 샀/참았더라면, 지금은?</span></span>
+  <span class="ar">›</span>
+</a>
 
-  <p class="lead">내가 생각하는 <b>앞으로의 방향</b>을 차트 밑에 직접 그리면, AI가 그 시나리오를 보고 한마디 해주는 기능이에요.</p>
-
-  <ol class="steps">
-    <li><strong>차트 띄우기</strong> — 위 검색창에 종목명을 입력하면 차트가 나와요. 옆의 파란 버튼으로 <b>차트 스크린샷 이미지</b>를 불러올 수도 있어요.</li>
-    <li><strong>그리기</strong> — 아래 칸에 예상하는 추세선이나 캔들을 자유롭게 그려요.</li>
-    <li><strong>GO! 포핏 검증</strong> — 버튼을 누르면 포핏이 내 시나리오를 판단해 줍니다.</li>
-  </ol>
-
-  <figure>
-    <img src="images/play_note_top.png" alt="예상노트 상단. 종목 검색창과 이미지 불러오기 버튼, 종목 차트" loading="lazy">
-  </figure>
-  <div class="duo-wrap">
-    <div class="duo">
-      <figure>
-        <img src="images/play_note_draw.png" alt="아래 캔버스에 추세선을 그린 모습. 분석 중 버튼이 활성화되어 있다" loading="lazy">
-      </figure>
-      <figure>
-        <img src="images/play_note_guide.png" alt="그리기 안내. 자유롭게 캔들이나 추세를 그리고 GO 포핏 버튼을 누르라는 설명과 GO 포핏 검증 버튼" loading="lazy">
-      </figure>
-    </div>
-    <figcaption>밑 칸에 쓱쓱 그리고 → GO! 포핏 검증</figcaption>
-  </div>
-
-  <figure class="mid">
-    <img src="images/play_note_result.png" alt="포핏 진단 팝업. 그린 시나리오에 대해 포핏이 분석 멘트를 해준다" loading="lazy">
-    <figcaption>내가 그린 시나리오에 대한 포핏의 한마디</figcaption>
-  </figure>
-  <div class="note"><strong>참고용이에요.</strong> AI 분석에는 오류나 부정확한 내용이 있을 수 있어요. 투자 판단은 꼭 직접 확인하고 하세요.</div>
-</section>
-
-<!-- ===== 2. 포핏 플렉스 ===== -->
-<section id="flex">
-  <div class="sec-tag">
-    <span class="blob-num pink">2</span>
-    <h2>포핏 플렉스 — 특별일정 모아보기</h2>
-  </div>
-
-  <p class="lead">여행·행사처럼 <b>특정 기간의 지출을 따로 묶어서</b> 보는 기능이에요. 시작·진행은 <b>홈 2페이지</b>에서 하고(<a href="guide.html#home" style="color:var(--orange-deep)">홈화면 가이드</a>), 여기 포핏플레이에선 <b>끝난 일정들을 모아보고 정리</b>해요.</p>
-
-  <h3>끝나면 이렇게 정리돼요</h3>
-  <p>일정을 <b>종료</b>하면 일반 모드로 돌아오고, 시작할 때 고른 <b>"가계부 합산에서 제외"</b> 여부에 따라 두 갈래로 정리됩니다.</p>
-  <p><b>가계부에 포함한 일정</b>은 가계부 일지에 <b>"특별일정" 합계 줄</b>(보라 테두리)로 한 줄 뜨고, <b>월간 시각화</b>엔 일정마다 <b>블롭 한 개</b>(이름 = 일정명)로 떠요. 블롭을 탭하면 <b>"🧳 플렉스에서 보기"</b>로 그 일정 상세까지 바로 갈 수 있어요.</p>
-  <div class="duo-wrap">
-    <div class="duo">
-      <figure><img src="images/flex_tag_day.png" alt="가계부 일간 일지에 특별일정 합계 카드가 보라 테두리로 표시된다" loading="lazy"></figure>
-      <figure><img src="images/flex_viz_blob.png" alt="월간 시각화에 부산 2박3일, 가을 캠핑 등 특별일정이 블롭으로 떠 있다" loading="lazy"></figure>
-    </div>
-    <figcaption>가계부 일지엔 "특별일정" 합계로 · 월간 시각화엔 블롭으로</figcaption>
-  </div>
-  <p><b>가계부에서 제외한 일정</b>은 가계부 <b>합산·진단에서 빠지고</b>, 작은 표식만 남아요(탭하면 아카이브로).</p>
-
-  <h3>모아보기 — 아카이브</h3>
-  <p>지금 이 화면, <b>포핏플레이 → 🧳 포핏 플렉스</b>에서 <b>전체 일정 목록</b>을 봐요. 일정을 누르면 <b>기간·합계·항목·메모</b>가 담긴 상세로 들어갑니다.</p>
-  <div class="duo-wrap">
-    <div class="duo">
-      <figure><img src="images/flex_list.png" alt="포핏 플렉스 일정 목록. 가을 캠핑, 친구 결혼식, 부산 2박3일, 제주도 여행 카드가 사진과 함께 나열된다" loading="lazy"></figure>
-      <figure><img src="images/flex_detail.png" alt="제주도 여행 상세. 기간과 합계, 항공·호텔·렌터카 항목 내역과 내보내기·메모" loading="lazy"></figure>
-    </div>
-    <figcaption>일정 목록 → 탭 → 상세(항목 내역 · 빼기 · 내보내기 · 메모)</figcaption>
-  </div>
-
-  <h3>일정 메모</h3>
-  <p>일정 자체에도 메모를 남길 수 있어요(기록 화면이나 상세의 <b>"+ 메모"</b>). 항목별 메모와는 별개예요.</p>
-
-  <div class="note"><strong>데이터는 안전해요.</strong> 플렉스는 원본 기록은 그대로 두고 <b>"이 일정 소속"이라는 표시만</b> 붙이는 방식이에요. 그래서 일정에서 항목을 <b>빼면(제외) 원래 가계부 자리로 그대로 돌아가요</b> — 기록이 바뀌거나 사라지지 않습니다.</div>
-</section>
+<!-- ── 매매 어시스트 ── -->
+<div class="grouphead">매매 어시스트</div>
+<a class="menu grad" href="naedon.html">
+  <span class="ic">🎬</span>
+  <span class="tx"><span class="tt">내실력 봤어??</span><span class="ds">내 매매를 종목별로 되짚어보기</span></span>
+  <span class="ar">›</span>
+</a>
+<a class="menu" href="nightwatch.html" style="--c:#1A237E">
+  <span class="ic">🌙</span>
+  <span class="tx"><span class="tt">Night Watch</span><span class="ds">관심종목을 감시단에게 맡기기</span></span>
+  <span class="ar">›</span>
+</a>
+<a class="menu" href="discovery.html" style="--c:#558B2F">
+  <span class="ic">🔍</span>
+  <span class="tx"><span class="tt">포핏의 랜덤 리서치</span><span class="ds">매일 랜덤으로 뽑는 오늘의 종목 카드</span></span>
+  <span class="ar">›</span>
+</a>
 
 <footer>
   <span class="paw">Pawfit! 포핏!!</span>

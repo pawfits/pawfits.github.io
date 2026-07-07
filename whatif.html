@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 만약에.. 사용법 — 포핏 멀티버스</title>
+<meta name="description" content="포핏(Pawfit) 내가 만약에..(멀티버스) 사용 가이드. 그때 샀거나 참았더라면 지금 얼마? 후회를 재미로 돌려보는 가정 시뮬레이터.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#2C2620;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --mv:#C0246F;
+  --mv-deep:#8E1450;
+  --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.8;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:var(--head);
+}
+header{text-align:center;padding:26px 0 36px}
+.paw{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
+  color:var(--mv);
+  text-transform:uppercase;
+}
+h1{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:clamp(28px,7.6vw,38px);
+  line-height:1.3;
+  margin:10px 0 12px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+section{margin-bottom:56px}
+h2{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.02em;
+  font-size:22px;
+  line-height:1.4;
+}
+h3{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:18px;
+  margin:34px 0 10px;
+  color:var(--mv-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:17.5px;
+  background:var(--card);
+  border-left:5px solid var(--mv);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 22px;
+}
+.choice{display:flex;gap:12px;margin:18px 0 4px}
+.choice .c{
+  flex:1;
+  background:var(--card);
+  border:1.5px solid #EAD3E0;
+  border-radius:16px;
+  padding:14px 14px 16px;
+  text-align:center;
+}
+.choice .ic{font-size:26px;line-height:1.3}
+.choice .tt{font-family:var(--head);font-weight:800;font-size:15.5px;color:var(--mv-deep);margin-top:4px}
+.choice .ds{font-size:13px;color:var(--ink-soft);margin-top:3px}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:300px;margin:0 auto}
+figure.mid img{max-width:400px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:var(--head);font-weight:800}
+.note.mv{background:#FBE9F2;border-color:#F0CADE;color:#8E1450}
+.steps{list-style:none;margin:20px 0;counter-reset:step}
+.steps>li{
+  position:relative;
+  padding:2px 0 22px 56px;
+  counter-increment:step;
+}
+.steps>li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:var(--head);
+  font-weight:800;
+  width:38px;height:38px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--mv);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:17px;
+}
+.steps>li strong{font-family:var(--head);font-weight:800;color:var(--mv-deep)}
+.steps figure{margin:14px 0 0}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  body{font-size:16.5px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="play.html">← 포핏플레이 목차</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>🔮 내가 만약에..</h1>
+  <p class="sub">그때 그 선택, 지금 어땠을까? 🐾</p>
+</header>
+
+<!-- ===== 개념 ===== -->
+<section>
+  <p class="lead">그때 <b>살걸… 팔걸…</b> 하고 <b>'껄무새'</b>처럼 후회한 적 있으시죠? 😅 그 시점에 <b>눈감고 샀더라면</b>, 혹은 <b>안 팔고 참았더라면</b> 지금 어땠을지 — 포핏과 함께 알아봐요. 손익을 따지는 게 아니라, <b>'만약에'를 재미로 돌려보는</b> 거예요.</p>
+
+  <div class="choice">
+    <div class="c"><div class="ic">👀</div><div class="tt">눈감고 샀다면</div><div class="ds">그때 안 샀는데,<br>눈 딱 감고 샀더라면</div></div>
+    <div class="c"><div class="ic">🫷</div><div class="tt">안 팔고 참았다면</div><div class="ds">그때 팔았는데,<br>안 팔고 버텼더라면</div></div>
+  </div>
+</section>
+
+<!-- ===== 사용 순서 ===== -->
+<section>
+  <h2>이렇게 써요</h2>
+
+  <ol class="steps">
+    <li>
+      <strong>하루 한 번 — "만약에…" 열기</strong><br>
+      메뉴를 열면 그동안 찍어둔 <b>멀티버스 카드</b>가 쌓여 있어요. 오늘 쓸 수 있으면 포핏이 <b>"세계를 여러 개 불어놨어요"</b> 하고 알려줘요. 오른쪽 아래 <b>"만약에…"</b> 버튼으로 시작해요.
+      <figure class="slim">
+        <img src="images/whatif_list.png" alt="내가 만약에 목록 화면. 대한항공·sk하이닉스 카드와 포핏이 세계를 여러 개 불어놨어요 안내, 만약에 버튼" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>메뉴를 열면 — 지난 멀티버스 + "만약에…" 버튼</figcaption>
+      </figure>
+    </li>
+
+    <li>
+      <strong>종목 검색 → 캔들 차트</strong><br>
+      궁금한 종목을 검색하면 <b>캔들 차트</b>가 떠요. <b>일봉·주봉·월봉</b>을 바꿔가며, 그때 그 시점을 찾아요. (두 손가락으로 확대하고, 좌우로 밀 수 있어요)
+      <figure class="slim">
+        <img src="images/whatif_chart.png" alt="대한항공 월봉 캔들 차트. 캔들을 탭해서 그때 가격을 찍으라는 안내" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>일·주·월봉 캔들에서 그때를 찾아요</figcaption>
+      </figure>
+    </li>
+
+    <li>
+      <strong>봉을 탭해서 "그때 가격"을 콕</strong><br>
+      궁금한 <b>캔들을 탭</b>하면 그 봉이 크게 떠요. <b>점선을 위아래로 드래그</b>해서 그때 가격을 맞춰요 — 숫자를 직접 입력하지 않아도 돼요. 정했으면 <b>"이 가격"</b>.
+      <figure class="slim">
+        <img src="images/whatif_mark.png" alt="선택한 캔들이 크게 뜨고 노란 점선을 드래그해 21455원으로 가격을 설정하는 팝업" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>점선을 밀어 그때 가격을 콕 → "이 가격"</figcaption>
+      </figure>
+    </li>
+
+    <li>
+      <strong>방향 선택 — 샀다면? 참았다면?</strong><br>
+      마지막으로 <b>👀 눈감고 샀다면</b> / <b>🫷 안 팔고 참았다면</b> 중 하나를 골라요. 그러면 그 가정으로 멀티버스가 열려요.
+    </li>
+
+    <li>
+      <strong>결과 — ▶ 누르면 그 뒤가 펼쳐져요</strong><br>
+      처음엔 <b>내가 찍은 그 지점까지만</b> 차트가 나와 있어요. 왼쪽 위 <b>"눈감고 샀다면 ▶"</b>(또는 "안 팔고 참았다면 ▶")를 누르면, <b>그 뒤로 지금까지 흐름이 쭉 펼쳐지는 연출</b>과 함께 결과가 떠요 — <b>지금 몇 %</b>, 그 후 <b>최고·최저</b>, 그리고 <b>포핏의 한마디.</b>
+      <figure class="slim">
+        <img src="images/whatif_result.png" alt="대한항공 결과 화면. 지금 +34.0퍼센트, 그 후 최고 45.4 최저 0.7, 포핏의 멀티버스 멘트" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>지금 +○○% · 그 후 최고/최저 · 포핏의 멀티버스 한마디</figcaption>
+      </figure>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== 주의 ===== -->
+<section>
+  <h2>알아두면 좋아요</h2>
+
+  <div class="note mv"><strong>▶ 다시 눌러도 결과는 그대로예요.</strong> 한 번 연 멀티버스는 <b>그날 본 결과가 그대로 남아</b> 있어요. ▶를 다시 눌러도 펼침 연출만 다시 볼 뿐, 결과와 멘트는 똑같아요.</div>
+
+  <div class="note"><strong>🔁 "다시 조회"는?</strong> 상단 <b>"다시 조회"</b>를 누르면 <b>하루치를 더 반영해</b> 결과를 새로 뽑아요. 단, 이건 <b>하루 1회</b> 횟수를 소모해요(희망회로와 같은 게이트). 소진되면 다음 날 다시 열려요.</div>
+
+  <div class="note"><strong>참고용이에요.</strong> AI가 만든 재미 콘텐츠라 <b>실제와 다를 수 있어요.</b> 투자 판단은 꼭 직접 확인하고 하세요.</div>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="play.html" style="margin-top:6px">← 포핏플레이 목차로</a>
+</footer>
+
+</div>
+</body>
+</html>

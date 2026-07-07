@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내실력 봤어?? 사용법 — 내돈내산 상영관</title>
+<meta name="description" content="포핏(Pawfit) 내실력 봤어??(내돈내산) 사용 가이드. 내 매매를 종목별로 필름처럼 되짚어보는 복기 코너.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#2C2620;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --nd:#EE852A;
+  --nd-deep:#A85511;
+  --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.8;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:var(--head);
+}
+header{text-align:center;padding:26px 0 36px}
+.paw{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
+  color:var(--nd-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:clamp(28px,7.6vw,38px);
+  line-height:1.3;
+  margin:10px 0 12px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+section{margin-bottom:56px}
+h2{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.02em;
+  font-size:22px;
+  line-height:1.4;
+}
+h3{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:18px;
+  margin:30px 0 8px;
+  color:var(--nd-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:17.5px;
+  background:var(--card);
+  border-left:5px solid var(--nd);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 22px;
+}
+figure{margin:22px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:300px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:var(--head);font-weight:800}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.badges .b{
+  font-family:var(--head);font-weight:800;font-size:13.5px;
+  border:1.5px dashed #C99A5B;color:var(--nd-deep);
+  border-radius:999px;padding:5px 13px;background:#FFF6E9;
+}
+/* 3칸 상영관 — 번호 붙은 파트 */
+.rooms{margin:18px 0}
+.room{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--card);border:1.5px solid var(--cream-deep);
+  border-radius:16px;padding:15px 16px;margin-bottom:12px;
+}
+.room .no{
+  flex-shrink:0;font-family:var(--head);font-weight:800;color:#fff;
+  width:32px;height:32px;border-radius:50%;background:var(--nd);
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+}
+.room .tt{font-family:var(--head);font-weight:800;color:var(--nd-deep);font-size:15.5px}
+.room .ds{font-size:14.5px;margin-top:2px}
+.room .ds b{color:var(--ink)}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  body{font-size:16.5px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="play.html">← 포핏플레이 목차</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>🎬 내실력 봤어??</h1>
+  <p class="sub">내 매매를 필름처럼 되짚어봐요 🐾</p>
+</header>
+
+<!-- ===== 개념 ===== -->
+<section>
+  <p class="lead">알림으로 쌓인 <b>내 진짜 매매</b>를 <b>종목별로 자동으로 모아</b>, 필름처럼 되짚어보는 복기 코너예요. 내가 언제 <b>샀는지(B)</b>·<b>팔았는지(S)</b>를 그 종목 <b>실제 차트 위에 얹어서</b>, 어떤 흐름에서 그 매매가 나왔는지 다시 볼 수 있어요.</p>
+</section>
+
+<!-- ===== 1. 종목별로 저절로 쌓여요 ===== -->
+<section>
+  <h2>① 종목별로 저절로 쌓여요</h2>
+  <p>따로 만들 것 없어요. <b>매매가 기록되면 그 종목의 목록이 자동으로 생기고</b>, 같은 종목은 <b>하나의 히스토리로 계속 쌓여요.</b> 카드마다 <b>누적 손익 · 사이클 수 · 최근 매매일</b>이 보여요. <span style="color:var(--ink-soft);font-size:14.5px">(한 종목을 샀다가 정리할 때까지가 한 사이클 — 한 판이에요.)</span></p>
+
+  <h3>🏅 매매 칭호 — 카드에 도장처럼 찍혀요</h3>
+  <p>매매 성적에 따라 종목 카드에 <b>도장처럼</b> 위트 있는 칭호가 찍혀요. 재미로 봐주세요 😄</p>
+  <div class="badges">
+    <span class="b">인생종목</span>
+    <span class="b">존버장인</span>
+    <span class="b">단타의제왕</span>
+    <span class="b">증권사효자</span>
+    <span class="b">블랙홀</span>
+    <span class="b">지뢰</span>
+  </div>
+
+  <figure class="slim">
+    <img src="images/naedon_list.png" alt="내실력 봤어 종목 목록. 종목 카드마다 단타의제왕 칭호 도장과 누적 수익, 사이클 수" loading="lazy" onerror="this.style.display='none'">
+    <figcaption>종목마다 카드 — 매매 칭호 · 누적 손익 · 사이클 수</figcaption>
+  </figure>
+
+  <div class="note"><strong>정리·감추기</strong> 카드의 <b>연필</b>로 한 줄 메모를, <b>➖</b>로 목록에서 감출 수 있어요(숨김 목록으로 접혀요). 감춰도 <b>기록이 지워지는 건 아니에요.</b></div>
+</section>
+
+<!-- ===== 2. 상영관 ===== -->
+<section>
+  <h2>② 상영관 — 3칸으로 되짚기</h2>
+  <p>종목 카드를 누르면 <b>상영관</b>이 열려요. 위에서 아래로 <b>세 칸</b>으로 되짚어봐요.</p>
+
+  <div class="rooms">
+    <div class="room">
+      <div class="no">1</div>
+      <div>
+        <div class="tt">위 — 내 매매 지점이 찍힌 차트</div>
+        <div class="ds"><b>일봉·주봉·월봉</b>을 바꿔가며 <b>＋／－로 확대·축소</b>해요. 내가 <b>매매한 날은 캔들에 박스로 표시</b>돼 있어, 그 박스를 누르면 아래 칸에 상세가 나와요. 차트 바로 밑엔 그 구간의 <b>간단한 추세 패턴</b>(쌍바닥 같은)도 짚어줘요 — 내가 어디쯤에서 샀는지 보이라고요.</div>
+      </div>
+    </div>
+    <div class="room">
+      <div class="no">2</div>
+      <div>
+        <div class="tt">가운데 — 그 매매의 상세와 사이클</div>
+        <div class="ds">보유 기간에 맞춰 <b>5분봉부터, 길어질수록 일·주봉</b>으로 그 순간을 자세히 보여줘요. 차트 밑엔 <b>사이클(회차)별 수익금</b>이 나오고, <b>박스를 누르면 그 매매의 사고(B)·판(S) 지점 마커</b>가 차트에 표시돼요.</div>
+      </div>
+    </div>
+    <div class="room">
+      <div class="no">3</div>
+      <div>
+        <div class="tt">아래 — 흐름 복기 한 줄</div>
+        <div class="ds">"저항 근처서 2회차, 2건 굴려 +1,075,000원"처럼, <b>몇 번 매매해서 얼마 벌었는지</b> 간단히 짚어주는 곳이에요.</div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="slim">
+    <img src="images/naedon_theater.png" alt="상영관 전체. 위 일봉 차트에 매수매도 마커와 쌍바닥 패턴, 5분봉 상세 차트, 회차별 손익 카드, 흐름 복기" loading="lazy" onerror="this.style.display='none'">
+    <figcaption>상영관 — 위 차트(패턴) · 가운데 상세(회차 손익) · 아래 흐름 복기</figcaption>
+  </figure>
+  <figure class="slim">
+    <img src="images/naedon_zoom.png" alt="위 차트를 확대해 매매한 캔들이 골드 박스로 감싸진 모습" loading="lazy" onerror="this.style.display='none'">
+    <figcaption>확대하면 — 매매한 캔들이 박스로 또렷하게</figcaption>
+  </figure>
+</section>
+
+<!-- ===== 참고 ===== -->
+<section>
+  <div class="note"><strong>매매 기록이 재료예요.</strong> 상영관은 <b>알림으로 쌓인 매매일지</b>를 바탕으로 만들어져요. 매매 알림이 자세할수록 더 정확하게 되짚을 수 있어요.</div>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="play.html" style="margin-top:6px">← 포핏플레이 목차로</a>
+</footer>
+
+</div>
+</body>
+</html>

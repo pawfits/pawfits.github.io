@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포핏 플렉스 사용법 — 특별일정 모아보기</title>
+<meta name="description" content="포핏(Pawfit) 포핏 플렉스 사용 가이드. 여행·행사처럼 특정 기간의 지출을 따로 묶어 정산하고 모아보는 기능.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#2C2620;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --fx:#E8981C;
+  --fx-deep:#9A6100;
+  --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.8;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:var(--head);
+}
+header{text-align:center;padding:26px 0 24px}
+.paw{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
+  color:var(--fx-deep);
+  text-transform:uppercase;
+}
+h1{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:clamp(28px,7.6vw,38px);
+  line-height:1.3;
+  margin:10px 0 12px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+section{margin-bottom:52px}
+h2{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.02em;
+  font-size:22px;
+  line-height:1.4;
+}
+h3{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:18px;
+  margin:28px 0 8px;
+  color:var(--fx-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:17.5px;
+  background:var(--card);
+  border-left:5px solid var(--fx);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 22px;
+}
+figure{margin:20px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:300px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.duo{display:flex;gap:14px;align-items:flex-start}
+.duo figure{flex:1;margin:0}
+.duo-wrap{margin:20px 0}
+.duo-wrap figcaption{margin-top:12px}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:var(--head);font-weight:800}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  body{font-size:16.5px}
+  .duo{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="play.html">← 포핏플레이 목차</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>🧳 포핏 플렉스</h1>
+  <p class="sub">여행·행사, 특별한 기간을 따로 모아봐요 🐾</p>
+</header>
+
+<!-- ===== 개념 ===== -->
+<section>
+  <p class="lead">여행·행사처럼 <b>특별한 기간의 지출을 따로 묶어서</b> 정산하고 모아보는 기능이에요. 그 기간에 들어온 기록이 <b>자동으로 하나로 묶여</b>, 나중에 "이번 여행에 얼마 썼지?"를 한눈에 볼 수 있어요.</p>
+</section>
+
+<!-- ===== 시작 ===== -->
+<section>
+  <h2>시작은 홈 화면에서</h2>
+  <p>홈을 <b>옆으로 넘겨(2페이지)</b> <b>특별일정 시작하기</b>를 눌러요. 일정 이름을 적고 시작하면, <b>끝낼 때까지 들어오는 기록이 이 일정으로 자동으로 묶여요.</b> <span style="color:var(--ink-soft);font-size:14.5px">(자세한 시작 방법은 <a href="guide.html#home" style="color:var(--fx-deep)">홈화면 안내</a>를 참고하세요.)</span></p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure><img src="images/flex_start.png" alt="특별일정 시작 팝업. 일정 이름 입력칸과 가계부 합산에서 제외 스위치, 시작 버튼" loading="lazy" onerror="this.style.display='none'"></figure>
+      <figure><img src="images/flex_record.png" alt="특별일정 진행 중 화면. 녹화중 표시와 누적 금액, 그 기간에 들어온 기록 카드들" loading="lazy" onerror="this.style.display='none'"></figure>
+    </div>
+    <figcaption>이름 적고 시작 → 진행 중엔 그 기간 기록이 모여요</figcaption>
+  </div>
+  <div class="note"><strong>가계부 합산에서 뺄 수도 있어요.</strong> 시작할 때 스위치를 켜면, 이 일정 지출은 <b>평소 가계부 합계·진단에서 빠져요</b>(여행비를 일상 소비와 섞기 싫을 때).</div>
+</section>
+
+<!-- ===== 끝나면 정리 ===== -->
+<section>
+  <h2>끝나면 이렇게 정리돼요</h2>
+  <p>일정을 <b>종료</b>하면 일반 모드로 돌아오고, 시작할 때 고른 <b>합산 제외 여부</b>에 따라 두 갈래로 정리돼요.</p>
+
+  <h3>가계부에 포함한 일정</h3>
+  <p>가계부 일지엔 <b>"특별일정" 합계 한 줄</b>(보라 테두리)로 뜨고, <b>월간 그림</b>엔 일정마다 <b>동그란 방울 하나</b>(이름 = 일정명)로 떠요. 방울을 톡 누르면 <b>"🧳 플렉스에서 보기"</b>로 그 일정 상세까지 바로 갈 수 있어요.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure><img src="images/flex_tag_day.png" alt="가계부 일간 일지에 특별일정 합계 카드가 보라 테두리로 표시된 모습" loading="lazy" onerror="this.style.display='none'"></figure>
+      <figure><img src="images/flex_viz_blob.png" alt="월간 그림에 여행·캠핑 같은 특별일정이 동그란 방울로 떠 있는 모습" loading="lazy" onerror="this.style.display='none'"></figure>
+    </div>
+    <figcaption>가계부엔 "특별일정" 합계로 · 월간 그림엔 방울로</figcaption>
+  </div>
+
+  <h3>가계부에서 뺀 일정</h3>
+  <p>가계부 <b>합계·진단에서 빠지고</b>, 작은 표식만 남아요(톡 누르면 아래 모아보기로).</p>
+</section>
+
+<!-- ===== 모아보기 ===== -->
+<section>
+  <h2>모아보기 — 여기 포핏 플렉스에서</h2>
+  <p>지금 이 화면, <b>포핏플레이 → 🧳 포핏 플렉스</b>에서 <b>전체 일정 목록</b>을 봐요. 일정을 누르면 <b>기간·합계·항목 내역·메모</b>가 담긴 상세로 들어가요.</p>
+  <div class="duo-wrap">
+    <div class="duo">
+      <figure><img src="images/flex_list.png" alt="포핏 플렉스 일정 목록. 가을 캠핑, 친구 결혼식, 부산 여행, 제주도 여행 카드가 사진과 함께 나열됨" loading="lazy" onerror="this.style.display='none'"></figure>
+      <figure><img src="images/flex_detail.png" alt="제주도 여행 상세. 기간과 합계, 항공·호텔·렌터카 항목 내역과 메모" loading="lazy" onerror="this.style.display='none'"></figure>
+    </div>
+    <figcaption>일정 목록 → 톡 → 상세(항목 내역 · 빼기 · 내보내기 · 메모)</figcaption>
+  </div>
+
+  <h3>일정 메모</h3>
+  <p>일정 자체에도 메모를 남길 수 있어요(기록 화면이나 상세의 <b>"+ 메모"</b>). 항목별 메모와는 별개예요.</p>
+</section>
+
+<!-- ===== 안전 ===== -->
+<section>
+  <div class="note"><strong>기록은 안전해요.</strong> 플렉스는 원본 기록은 그대로 두고 <b>"이 일정 소속"이라는 표시만</b> 붙이는 방식이에요. 그래서 일정에서 항목을 <b>빼면 원래 가계부 자리로 그대로 돌아가요</b> — 기록이 바뀌거나 사라지지 않아요.</div>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="play.html" style="margin-top:6px">← 포핏플레이 목차로</a>
+</footer>
+
+</div>
+</body>
+</html>

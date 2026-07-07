@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>개미일기 가이드 — 포핏 매매일지</title>
 <meta name="description" content="포핏(Pawfit) 개미일기 매매일지 사용 가이드. 대시보드, 보유중·일간·월간 일지 사용법.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
 :root{
   --cream:#FDF3E7;
@@ -24,9 +24,10 @@
   --card:#FFFBF4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Gowun Dodum',sans-serif;
+  font-family:'Pretendard Variable','Pretendard',sans-serif;
   background:var(--cream);
   color:var(--ink);
   line-height:1.75;
@@ -40,21 +41,21 @@ body{
   font-size:15px;
   color:var(--orange-deep);
   text-decoration:none;
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
 }
 header{
   text-align:center;
   padding:28px 0 40px;
 }
 .paw{
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   font-size:15px;
   letter-spacing:.2em;
   color:var(--orange-deep);
   text-transform:uppercase;
 }
 h1{
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   font-size:clamp(30px,8vw,40px);
   line-height:1.3;
   margin:10px 0 14px;
@@ -67,7 +68,7 @@ h1{
   padding:20px 24px;
   margin-bottom:56px;
 }
-.toc p{font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
+.toc p{font-family:'Wanted Sans Variable',sans-serif;font-size:15px;color:var(--orange-deep);margin-bottom:8px}
 .toc a{
   display:block;
   color:var(--ink);
@@ -86,7 +87,7 @@ section{margin-bottom:72px}
   margin-bottom:14px;
 }
 .blob-num{
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   width:44px;height:44px;
   display:flex;align-items:center;justify-content:center;
   font-size:20px;
@@ -98,12 +99,12 @@ section{margin-bottom:72px}
 .blob-num.pink{background:var(--pink)}
 .blob-num.teal{background:var(--teal)}
 h2{
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   font-size:24px;
   line-height:1.35;
 }
 h3{
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   font-size:18px;
   margin:34px 0 10px;
   color:var(--orange-deep);
@@ -155,7 +156,7 @@ figcaption{
   color:#7A5512;
   margin:18px 0;
 }
-.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.note strong{font-family:'Wanted Sans Variable',sans-serif;font-weight:400}
 .steps{list-style:none;margin:18px 0;counter-reset:step}
 .steps li{
   position:relative;
@@ -165,7 +166,7 @@ figcaption{
 .steps li::before{
   content:counter(step);
   position:absolute;left:0;top:0;
-  font-family:'Jua',sans-serif;
+  font-family:'Wanted Sans Variable',sans-serif;
   width:36px;height:36px;
   display:flex;align-items:center;justify-content:center;
   background:var(--orange);
@@ -173,7 +174,7 @@ figcaption{
   border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
   font-size:17px;
 }
-.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
+.steps li strong{font-family:'Wanted Sans Variable',sans-serif;font-weight:400}
 footer{
   text-align:center;
   color:var(--ink-soft);
@@ -186,6 +187,9 @@ footer .paw{display:block;margin-bottom:6px}
   .duo{flex-direction:column}
   body{font-size:16px}
 }
+body{font-weight:450;letter-spacing:-.01em;line-height:1.8}
+h1,h2,h3,.paw,.back,.toc p,.blob-num,.steps li::before,.steps li strong,.note strong{font-weight:800}
+.svgbox svg{font-family:'Pretendard Variable',sans-serif}
 </style>
 </head>
 <body>
@@ -227,13 +231,13 @@ footer .paw{display:block;margin-bottom:6px}
   <div class="svgbox" role="img" aria-label="시장별 매매 비중 예시. 국내주식, 해외주식, 지수선물이 비중만큼 네모로 표시된다">
     <svg viewBox="0 0 380 230" xmlns="http://www.w3.org/2000/svg">
       <rect x="20" y="16" width="210" height="170" rx="10" fill="#F1789C"/>
-      <text x="125" y="92" text-anchor="middle" font-size="17" fill="#5C1228" font-family="'Jua',sans-serif">국내주식</text>
+      <text x="125" y="92" text-anchor="middle" font-size="17" fill="#5C1228" font-family="'Wanted Sans Variable',sans-serif">국내주식</text>
       <text x="125" y="118" text-anchor="middle" font-size="14" fill="#7A2240">55.0%</text>
       <rect x="238" y="16" width="122" height="106" rx="10" fill="#8FD3F4"/>
-      <text x="299" y="62" text-anchor="middle" font-size="15" fill="#0C3D5C" font-family="'Jua',sans-serif">해외주식</text>
+      <text x="299" y="62" text-anchor="middle" font-size="15" fill="#0C3D5C" font-family="'Wanted Sans Variable',sans-serif">해외주식</text>
       <text x="299" y="86" text-anchor="middle" font-size="13" fill="#1D5C82">30.0%</text>
       <rect x="238" y="130" width="122" height="56" rx="10" fill="#FAC775"/>
-      <text x="299" y="153" text-anchor="middle" font-size="14" fill="#633806" font-family="'Jua',sans-serif">지수선물</text>
+      <text x="299" y="153" text-anchor="middle" font-size="14" fill="#633806" font-family="'Wanted Sans Variable',sans-serif">지수선물</text>
       <text x="299" y="173" text-anchor="middle" font-size="12.5" fill="#854F0B">15.0%</text>
       <text x="20" y="214" font-size="13" fill="#6B5B49">※ 예시 화면 — 실제 비중은 내 매매 기록 기준</text>
     </svg>
@@ -244,15 +248,15 @@ footer .paw{display:block;margin-bottom:6px}
   <div class="svgbox" role="img" aria-label="매매 성과 예시. 승률, 총 실현손익, 최대 익절, 최대 손절 네 칸">
     <svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg">
       <text x="30" y="36" font-size="14" fill="#6B5B49">승률</text>
-      <text x="30" y="70" font-size="24" fill="#2FA98B" font-family="'Jua',sans-serif">58.3%</text>
+      <text x="30" y="70" font-size="24" fill="#2FA98B" font-family="'Wanted Sans Variable',sans-serif">58.3%</text>
       <text x="30" y="96" font-size="13" fill="#9B8B77">14승 10패</text>
       <text x="205" y="36" font-size="14" fill="#6B5B49">총 실현손익</text>
-      <text x="205" y="70" font-size="24" fill="#F25555" font-family="'Jua',sans-serif">+12만원</text>
+      <text x="205" y="70" font-size="24" fill="#F25555" font-family="'Wanted Sans Variable',sans-serif">+12만원</text>
       <text x="205" y="96" font-size="13" fill="#9B8B77">24건 청산</text>
       <text x="30" y="146" font-size="14" fill="#6B5B49">최대 익절</text>
-      <text x="30" y="180" font-size="24" fill="#F25555" font-family="'Jua',sans-serif">+8.5만원</text>
+      <text x="30" y="180" font-size="24" fill="#F25555" font-family="'Wanted Sans Variable',sans-serif">+8.5만원</text>
       <text x="205" y="146" font-size="14" fill="#6B5B49">최대 손절</text>
-      <text x="205" y="180" font-size="24" fill="#4D9FE0" font-family="'Jua',sans-serif">-4.2만원</text>
+      <text x="205" y="180" font-size="24" fill="#4D9FE0" font-family="'Wanted Sans Variable',sans-serif">-4.2만원</text>
       <text x="30" y="210" font-size="13" fill="#6B5B49">※ 예시 화면</text>
     </svg>
   </div>
@@ -262,13 +266,13 @@ footer .paw{display:block;margin-bottom:6px}
   <div class="svgbox" role="img" aria-label="기간별 손익 곡선 예시. 기간 버튼과 월별 영역, 손익 곡선">
     <svg viewBox="0 0 380 230" xmlns="http://www.w3.org/2000/svg">
       <rect x="118" y="16" width="62" height="28" rx="14" fill="#F59E3C"/>
-      <text x="149" y="35" text-anchor="middle" font-size="13" fill="#fff" font-family="'Jua',sans-serif">3개월</text>
+      <text x="149" y="35" text-anchor="middle" font-size="13" fill="#fff" font-family="'Wanted Sans Variable',sans-serif">3개월</text>
       <rect x="48" y="16" width="62" height="28" rx="14" fill="#F8E8D4"/>
-      <text x="79" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">1개월</text>
+      <text x="79" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Wanted Sans Variable',sans-serif">1개월</text>
       <rect x="188" y="16" width="62" height="28" rx="14" fill="#F8E8D4"/>
-      <text x="219" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">6개월</text>
+      <text x="219" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Wanted Sans Variable',sans-serif">6개월</text>
       <rect x="258" y="16" width="48" height="28" rx="14" fill="#F8E8D4"/>
-      <text x="282" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Jua',sans-serif">1년</text>
+      <text x="282" y="35" text-anchor="middle" font-size="13" fill="#6B5B49" font-family="'Wanted Sans Variable',sans-serif">1년</text>
       <line x1="40" y1="130" x2="350" y2="130" stroke="#E5D5BE" stroke-width="1"/>
       <path d="M50 150 C 110 160, 140 90, 195 80 S 300 120, 340 70" fill="none" stroke="#F25555" stroke-width="4" stroke-linecap="round"/>
       <text x="80" y="200" text-anchor="middle" font-size="13" fill="#6B5B49">4월</text>
@@ -338,11 +342,11 @@ footer .paw{display:block;margin-bottom:6px}
     <svg viewBox="0 0 380 350" xmlns="http://www.w3.org/2000/svg">
       <defs><marker id="dm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#C9B79C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
       <rect x="115" y="26" width="150" height="52" rx="14" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1"/>
-      <text x="190" y="58" text-anchor="middle" font-size="15" fill="#854F0B" font-family="'Jua',sans-serif">보유중</text>
+      <text x="190" y="58" text-anchor="middle" font-size="15" fill="#854F0B" font-family="'Wanted Sans Variable',sans-serif">보유중</text>
       <rect x="20" y="198" width="150" height="52" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
-      <text x="95" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">일간</text>
+      <text x="95" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Wanted Sans Variable',sans-serif">일간</text>
       <rect x="210" y="198" width="150" height="52" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
-      <text x="285" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Jua',sans-serif">월간</text>
+      <text x="285" y="230" text-anchor="middle" font-size="15" fill="#0F6E56" font-family="'Wanted Sans Variable',sans-serif">월간</text>
       <line x1="108" y1="190" x2="158" y2="90" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>
       <line x1="272" y1="190" x2="222" y2="90" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>
       <line x1="176" y1="224" x2="204" y2="224" stroke="#C9B79C" stroke-width="2" marker-start="url(#dm)" marker-end="url(#dm)"/>

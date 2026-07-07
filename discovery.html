@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포핏의 랜덤 리서치 사용법 — 오늘의 랜덤 종목 뽑기</title>
+<meta name="description" content="포핏(Pawfit) 포핏의 랜덤 리서치 사용 가이드. 매일 저녁 포핏이 랜덤으로 추첨한 종목을 뽑아보는 가벼운 재미 코너.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<style>
+:root{
+  --cream:#FDF3E7;
+  --cream-deep:#F8E8D4;
+  --ink:#2C2620;
+  --ink-soft:#6B5B49;
+  --orange:#F59E3C;
+  --orange-deep:#C77419;
+  --dc:#4E8A2E;
+  --dc-deep:#33691E;
+  --card:#FFFBF4;
+  --head:'Wanted Sans Variable','Pretendard Variable',sans-serif;
+  --body:'Pretendard Variable','Pretendard',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-weight:450;
+  letter-spacing:-.01em;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.8;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 20px 80px}
+.back{
+  display:inline-block;
+  margin-top:28px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--orange-deep);
+  text-decoration:none;
+  font-family:var(--head);
+}
+header{text-align:center;padding:26px 0 24px}
+.paw{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.16em;
+  color:var(--dc);
+  text-transform:uppercase;
+}
+h1{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:clamp(27px,7.2vw,36px);
+  line-height:1.3;
+  margin:10px 0 12px;
+}
+.sub{color:var(--ink-soft);font-size:16px}
+section{margin-bottom:52px}
+h2{
+  font-family:var(--head);
+  font-weight:800;
+  letter-spacing:-.02em;
+  font-size:22px;
+  line-height:1.4;
+}
+h3{
+  font-family:var(--head);
+  font-weight:800;
+  font-size:18px;
+  margin:28px 0 8px;
+  color:var(--dc-deep);
+}
+p{margin-bottom:14px}
+.lead{
+  font-size:17.5px;
+  background:var(--card);
+  border-left:5px solid var(--dc);
+  padding:16px 20px;
+  border-radius:0 16px 16px 0;
+  margin:18px 0 22px;
+}
+figure{margin:20px 0}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid var(--cream-deep);
+}
+figure.slim img{max-width:300px;margin:0 auto}
+figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:10px;
+  padding:0 8px;
+}
+.note{
+  background:#FFF3DB;
+  border:1.5px solid #F4D9A8;
+  border-radius:16px;
+  padding:14px 18px;
+  font-size:15px;
+  color:#7A5512;
+  margin:18px 0;
+}
+.note strong{font-family:var(--head);font-weight:800}
+.note.dc{background:#EEF6E7;border-color:#CFE4BE;color:var(--dc-deep)}
+.note.warn{background:#FDECEC;border-color:#F3C9C9;color:#9A2B2B}
+.steps{list-style:none;margin:18px 0;counter-reset:step}
+.steps>li{
+  position:relative;
+  padding:2px 0 18px 54px;
+  counter-increment:step;
+}
+.steps>li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  font-family:var(--head);
+  font-weight:800;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--dc);
+  color:#fff;
+  border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;
+  font-size:16px;
+}
+.steps>li strong{font-family:var(--head);font-weight:800;color:var(--dc-deep)}
+footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:14px;
+  padding-top:24px;
+  border-top:1.5px dashed var(--cream-deep);
+}
+footer .paw{display:block;margin-bottom:6px}
+@media (max-width:420px){
+  body{font-size:16.5px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<a class="back" href="play.html">← 포핏플레이 목차</a>
+
+<header>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <h1>🔍 포핏의 랜덤 리서치</h1>
+  <p class="sub">오늘은 무슨 종목을 뽑았을까? 🐾</p>
+</header>
+
+<!-- ===== 개념 ===== -->
+<section>
+  <p class="lead">매일 저녁 <b>5시 이후</b>, 포핏이 <b>랜덤으로 추첨한</b> 종목 <b>1~3개</b>를 가져와요. 가져온 종목 카드는 <b>나이트워치에 바로 등록할 수 있게 분석까지 되어 있는 '보너스 카드'</b>예요. 다만 어떤 종목을 가져왔는지는 <b>열기 전엔 알 수 없어요</b> — 랜덤 추첨으로 뽑아오거든요. <b>꽝일지, 원하던 종목일지</b> 오늘도 한번 뽑아볼까요? 🐾</p>
+</section>
+
+<!-- ===== 이렇게 즐겨요 ===== -->
+<section>
+  <h2>이렇게 즐겨요</h2>
+  <ol class="steps">
+    <li><strong>매일 저녁, 새 카드가 도착</strong><br>저녁 5시 이후 <b>그날의 카드(1~3장)</b>가 올라와요. 어떤 종목이 들었는지는 아직 몰라요.</li>
+    <li><strong>오늘의 카드를 뽑아봐요</strong><br>카드는 <b>???로 가려져</b> 있어요. 딜러 포핏이 <b>"오늘의 한 장, 신중하게 골라봐요"</b> 하고 기다려요. <b>꽝일지, 원하던 종목일지</b> — 뽑으면 공개돼요!</li>
+    <li><strong>열면 = 보너스 카드</strong><br>뽑은 카드는 포핏이 종목 현황(개요·재무·수급)까지 <b>정리해둔 상태</b>라, <b>나이트워치에 바로 감시 등록할 수 있는 '보너스 카드'</b>인 셈이에요.</li>
+    <li><strong>마음에 들면 감시로</strong><br>이 종목을 계속 지켜보고 싶으면 <b>나이트워치 감시로 바로 넘길 수</b> 있어요(발굴 종목 자리로 들어가요).</li>
+  </ol>
+
+  <figure class="slim">
+    <img src="images/discovery_draw.png" alt="랜덤 리서치 목록. 오늘 날짜 배치에 물음표로 가려진 카드들과 딜러 포핏이 오늘의 한 장 신중하게 골라봐요 하는 모습, 아래는 지난 날짜 배치들" loading="lazy" onerror="this.style.display='none'">
+    <figcaption>오늘 카드는 ??? — 딜러 포핏과 함께 뽑아봐요</figcaption>
+  </figure>
+  <figure class="slim">
+    <img src="images/research_detail.png" alt="뽑은 종목 카드의 설명. 종목 현황 설명, 분기 매출·영업이익 그래프, 외인·기관 수급" loading="lazy" onerror="this.style.display='none'">
+    <figcaption>보너스 카드 — 종목 현황(개요·재무·수급)까지 정리돼 있어요</figcaption>
+  </figure>
+</section>
+
+<!-- ===== 규칙 ===== -->
+<section>
+  <h2>알아두면 좋아요</h2>
+
+  <div class="note dc"><strong>🃏 오늘 것만 새로 뽑아요</strong><br>지난 날짜 카드는 <b>그대로 남아</b> 있어요. 그날 안 뽑은 카드는 <b>???로 가려진 채</b> 박제되고, <b>새로 뽑는 건 오늘 카드</b>예요.</div>
+
+  <div class="note dc"><strong>🎯 감시 자리는 발굴 종목 2개</strong><br>여기서 감시로 넘긴 종목은 나이트워치의 <b>"발굴 종목" 자리(2개)</b>에 들어가요. 나이트워치 내 종목(2개)과 합쳐 <b>최대 4개</b>예요. (<a href="nightwatch.html" style="color:var(--dc-deep)">Night Watch 안내</a>)</div>
+
+  <div class="note warn"><strong>⚠️ 꼭 읽어주세요.</strong> 여기 나오는 종목은 포핏이 <b>매일 무작위로 추첨한 것</b>일 뿐, <b>추천하려는 의도가 전혀 아니에요.</b> 딸려 오는 설명도 <b>AI가 만든 참고 자료</b>라 <b>부정확하거나 틀릴 수 있어요.</b> 투자할 때는 <b>절대 그대로 믿지 말고</b>, 반드시 스스로 확인하며 신중하게 판단하세요.</div>
+</section>
+
+<footer>
+  <span class="paw">Pawfit! 포핏!!</span>
+  <a class="back" href="play.html" style="margin-top:6px">← 포핏플레이 목차로</a>
+</footer>
+
+</div>
+</body>
+</html>

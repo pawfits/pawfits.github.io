@@ -5,25 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>포핏 도움말</title>
 <meta name="description" content="포핏(Pawfit) 화면별 도움말 — 홈 2페이지, 포핏 호출.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
 :root{
   --cream:#FDF3E7; --cream-deep:#F8E8D4; --ink:#3A2E22; --ink-soft:#6B5B49;
   --orange:#F59E3C; --orange-deep:#C77419; --pink:#F1789C; --teal:#2FA98B; --card:#FFFBF4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+body{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
 html{scroll-behavior:smooth}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%;}
+body{font-family:'Pretendard Variable','Pretendard',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%;}
 .wrap{max-width:560px;margin:0 auto;padding:28px 20px 60px}
-.paw{font-family:'Jua',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase;display:block;text-align:center;margin-bottom:6px}
+.paw{font-family:'Wanted Sans Variable',sans-serif;font-size:14px;letter-spacing:.2em;color:var(--orange-deep);text-transform:uppercase;display:block;text-align:center;margin-bottom:6px}
 .sec-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;}
-.blob-num{font-family:'Jua',sans-serif;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--orange);border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;flex-shrink:0;}
+.blob-num{font-family:'Wanted Sans Variable',sans-serif;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--orange);border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;flex-shrink:0;}
 .blob-num.pink{background:var(--pink)}
 .blob-num svg{width:24px;height:24px}
-h2{font-family:'Jua',sans-serif;font-size:24px;line-height:1.35;}
-h3{font-family:'Jua',sans-serif;font-size:18px;margin:28px 0 10px;color:var(--orange-deep);}
+h2{font-family:'Wanted Sans Variable',sans-serif;font-size:24px;line-height:1.35;}
+h3{font-family:'Wanted Sans Variable',sans-serif;font-size:18px;margin:28px 0 10px;color:var(--orange-deep);}
 p{margin-bottom:14px}
 .lead{font-size:18px;background:var(--card);border-left:5px solid var(--orange);padding:16px 20px;border-radius:0 16px 16px 0;margin:16px 0 22px;}
 figure{margin:22px 0}
@@ -32,16 +33,18 @@ figure.slim img{max-width:280px;margin:0 auto}
 figure.mid img{max-width:380px;margin:0 auto}
 figcaption{font-size:14px;color:var(--ink-soft);text-align:center;margin-top:10px;padding:0 8px;}
 .note{background:#FFF3DB;border:1.5px solid #F4D9A8;border-radius:16px;padding:14px 18px;font-size:15px;color:#7A5512;margin:18px 0;}
-.note strong{font-family:'Jua',sans-serif;font-weight:400}
+.note strong{font-family:'Wanted Sans Variable',sans-serif;font-weight:400}
 .steps{list-style:none;margin:16px 0;counter-reset:step}
 .steps li{position:relative;padding:0 0 16px 50px;counter-increment:step;}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;font-family:'Jua',sans-serif;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;font-size:16px;}
-.steps li strong{font-family:'Jua',sans-serif;font-weight:400}
-.more{display:inline-block;margin-top:18px;font-family:'Jua',sans-serif;font-size:15px;color:var(--orange-deep);text-decoration:none;border:1.5px solid var(--cream-deep);background:var(--card);border-radius:14px;padding:10px 16px;}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;font-family:'Wanted Sans Variable',sans-serif;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;border-radius:46% 54% 52% 48% / 55% 46% 54% 45%;font-size:16px;}
+.steps li strong{font-family:'Wanted Sans Variable',sans-serif;font-weight:400}
+.more{display:inline-block;margin-top:18px;font-family:'Wanted Sans Variable',sans-serif;font-size:15px;color:var(--orange-deep);text-decoration:none;border:1.5px solid var(--cream-deep);background:var(--card);border-radius:14px;padding:10px 16px;}
 .idx a{display:block;color:var(--ink);text-decoration:none;padding:14px 16px;font-size:17px;background:var(--card);border:1.5px solid var(--cream-deep);border-radius:16px;margin-bottom:12px;}
-.idx a b{font-family:'Jua',sans-serif;font-weight:400;color:var(--orange-deep)}
+.idx a b{font-family:'Wanted Sans Variable',sans-serif;font-weight:400;color:var(--orange-deep)}
 .topic,#index{display:none}
 .topic.active,#index.active{display:block}
+body{font-weight:450;letter-spacing:-.01em;line-height:1.8}
+h1,h2,h3,.paw,.back,.toc p,.blob-num,.btn,.promise .tt,.post .date,.post h2,.note strong,.steps li::before,.steps li strong,footer a{font-weight:800}
 </style>
 </head>
 <body>
